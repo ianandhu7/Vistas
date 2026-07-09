@@ -1,0 +1,35 @@
+# Dependencies — npm install runs inside the container
+node_modules/
+
+# Build output — vite build runs inside the container
+dist/
+
+# Git
+.git/
+.gitignore
+
+# Editor & OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Environment files (secrets should NOT be baked into the image)
+.env
+.env.local
+.env.*.local
+
+# Docker files (not needed inside the image)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+README.md
+DEPLOYMENT.md
+
+# Test & coverage
+coverage/
+__tests__/
+*.test.js
+*.spec.js

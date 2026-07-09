@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+graphify-out/
+
+# Build output
+dist/
+
+# Editor & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Test coverage
+coverage/
+
+# Vite cache
+.vite/
+
+# Large media files
+*.mp4
+
+vite.config.js.timestamp-*
