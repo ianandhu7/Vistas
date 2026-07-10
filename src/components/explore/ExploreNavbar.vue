@@ -2,20 +2,23 @@
   <div class="w-full bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
     <div class="max-w-[1300px] mx-auto px-4 py-3 flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center">
-        <div class="flex flex-col items-center mr-2">
-          <div class="w-8 h-8 md:w-10 md:h-10 relative flex justify-center items-center">
-            <svg viewBox="0 0 100 100" class="w-full h-full">
-              <path d="M10,20 L90,20 L50,90 Z" fill="#003b6d"/>
-              <path d="M25,25 L75,25 L50,75 Z" fill="#8bc34a"/>
-              <path d="M40,30 L60,30 L50,55 Z" fill="#ffffff"/>
-            </svg>
-          </div>
+      <div class="flex items-center gap-2">
+        <!-- Icon (clipped to only show the V part) -->
+        <div class="h-10 w-8 md:h-12 md:w-10 relative overflow-hidden flex-shrink-0">
+          <img 
+            src="/light-logo.webp" 
+            alt="V" 
+            class="h-full w-auto object-left object-cover max-w-none" 
+          />
         </div>
-        <div class="flex flex-col">
-          <span class="text-[#004a8b] text-[18px] md:text-[22px] font-black leading-none tracking-tight">Vista's</span>
-          <span class="text-[#004a8b] text-[18px] md:text-[22px] font-black leading-none tracking-tight">Learning</span>
-          <span class="text-[8px] md:text-[10px] text-gray-500 font-semibold tracking-widest mt-0.5">Quality Education For All</span>
+        <!-- Text exactly as in design -->
+        <div class="flex flex-col justify-center">
+          <h1 class="text-[#004a8b] font-black text-[18px] md:text-[22px] leading-[1.1] tracking-tight">
+            Vista's<br/>Learning
+          </h1>
+          <p class="text-[#004a8b] text-[7px] md:text-[8px] font-bold mt-0.5 tracking-wide">
+            Quality Education For All
+          </p>
         </div>
       </div>
       

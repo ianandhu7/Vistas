@@ -51,7 +51,10 @@
           <div class="text-white font-black text-xl md:text-2xl leading-none">1999/- <span class="text-xs md:text-sm font-semibold text-blue-100 tracking-normal">Per Year!</span></div>
         </div>
         
-        <button class="bg-[#ffc107] hover:bg-[#ffb300] text-black font-bold py-3 md:py-3 px-6 md:px-8 rounded-full shadow-lg transition-colors flex items-center gap-2 text-xs md:text-sm uppercase tracking-wider shrink-0">
+        <button 
+          @click="checkout"
+          class="bg-[#ffc107] hover:bg-[#ffb300] text-black font-bold py-3 md:py-3 px-6 md:px-8 rounded-full shadow-lg transition-colors flex items-center gap-2 text-xs md:text-sm uppercase tracking-wider shrink-0"
+        >
           Start Learning Today
           <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
         </button>
@@ -62,6 +65,14 @@
 </template>
 
 <script setup>
+import { useSubscriptionStore } from '../../stores/subscription'
+
+const subscriptionStore = useSubscriptionStore()
+
+const checkout = () => {
+  // Initiate checkout for 14 months plan
+  subscriptionStore.handlePlanSelect('14months')
+}
 </script>
 
 <style scoped>

@@ -12,11 +12,11 @@
     </div>
     
     <!-- Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
       
       <!-- Feature 1 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-shadow hover:shadow-md">
-        <div class="w-12 h-12 rounded-lg bg-[#4a148c] flex items-center justify-center text-white mb-3">
+      <div @click="toggleRotation(0)" class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-all duration-300 hover:shadow-md cursor-pointer hover:-translate-y-1 active:scale-95 group">
+        <div class="w-12 h-12 rounded-lg bg-[#4a148c] flex items-center justify-center text-white mb-3 transition-transform duration-500 group-hover:scale-110" :class="{ 'rotate-180': rotated[0] }">
           <span class="material-symbols-outlined text-[24px]">sensors</span>
         </div>
         <h5 class="text-[#002e5c] font-bold text-[13px] md:text-[15px] leading-tight mb-1">Live Classes</h5>
@@ -24,8 +24,8 @@
       </div>
 
       <!-- Feature 2 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-shadow hover:shadow-md">
-        <div class="w-12 h-12 rounded-lg bg-[#e91e63] flex items-center justify-center text-white mb-3">
+      <div @click="toggleRotation(1)" class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-all duration-300 hover:shadow-md cursor-pointer hover:-translate-y-1 active:scale-95 group">
+        <div class="w-12 h-12 rounded-lg bg-[#e91e63] flex items-center justify-center text-white mb-3 transition-transform duration-500 group-hover:scale-110" :class="{ 'rotate-180': rotated[1] }">
           <span class="material-symbols-outlined text-[24px]">slideshow</span>
         </div>
         <h5 class="text-[#002e5c] font-bold text-[13px] md:text-[15px] leading-tight mb-1">Animated Lessons</h5>
@@ -33,8 +33,8 @@
       </div>
 
       <!-- Feature 3 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-shadow hover:shadow-md">
-        <div class="w-12 h-12 rounded-lg bg-[#4caf50] flex items-center justify-center text-white mb-3">
+      <div @click="toggleRotation(2)" class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-all duration-300 hover:shadow-md cursor-pointer hover:-translate-y-1 active:scale-95 group">
+        <div class="w-12 h-12 rounded-lg bg-[#4caf50] flex items-center justify-center text-white mb-3 transition-transform duration-500 group-hover:scale-110" :class="{ 'rotate-180': rotated[2] }">
           <span class="material-symbols-outlined text-[24px]">fact_check</span>
         </div>
         <h5 class="text-[#002e5c] font-bold text-[13px] md:text-[15px] leading-tight mb-1">Tests</h5>
@@ -42,8 +42,8 @@
       </div>
 
       <!-- Feature 4 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-shadow hover:shadow-md">
-        <div class="w-12 h-12 rounded-lg bg-[#1976d2] flex items-center justify-center text-white mb-3">
+      <div @click="toggleRotation(3)" class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-all duration-300 hover:shadow-md cursor-pointer hover:-translate-y-1 active:scale-95 group">
+        <div class="w-12 h-12 rounded-lg bg-[#1976d2] flex items-center justify-center text-white mb-3 transition-transform duration-500 group-hover:scale-110" :class="{ 'rotate-180': rotated[3] }">
           <span class="material-symbols-outlined text-[24px]">description</span>
         </div>
         <h5 class="text-[#002e5c] font-bold text-[13px] md:text-[15px] leading-tight mb-1">Smart Notes</h5>
@@ -51,8 +51,8 @@
       </div>
 
       <!-- Feature 5 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-shadow hover:shadow-md">
-        <div class="w-12 h-12 rounded-lg bg-[#ff9800] flex items-center justify-center text-white mb-3">
+      <div @click="toggleRotation(4)" class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-all duration-300 hover:shadow-md cursor-pointer hover:-translate-y-1 active:scale-95 group">
+        <div class="w-12 h-12 rounded-lg bg-[#ff9800] flex items-center justify-center text-white mb-3 transition-transform duration-500 group-hover:scale-110" :class="{ 'rotate-180': rotated[4] }">
           <span class="material-symbols-outlined text-[24px]">auto_stories</span>
         </div>
         <h5 class="text-[#002e5c] font-bold text-[13px] md:text-[15px] leading-tight mb-1">Karnataka Board</h5>
@@ -60,8 +60,8 @@
       </div>
 
       <!-- Feature 6 -->
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-shadow hover:shadow-md">
-        <div class="w-12 h-12 rounded-lg bg-[#673ab7] flex items-center justify-center text-white mb-3">
+      <div @click="toggleRotation(5)" class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col items-center text-center transition-all duration-300 hover:shadow-md cursor-pointer hover:-translate-y-1 active:scale-95 group">
+        <div class="w-12 h-12 rounded-lg bg-[#673ab7] flex items-center justify-center text-white mb-3 transition-transform duration-500 group-hover:scale-110" :class="{ 'rotate-180': rotated[5] }">
           <span class="material-symbols-outlined text-[24px]">rocket_launch</span>
         </div>
         <h5 class="text-[#002e5c] font-bold text-[13px] md:text-[15px] leading-tight mb-1">19+ Skill Courses</h5>
@@ -73,6 +73,13 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const rotated = ref(Array(6).fill(false))
+
+const toggleRotation = (index) => {
+  rotated.value[index] = !rotated.value[index]
+}
 </script>
 
 <style scoped>

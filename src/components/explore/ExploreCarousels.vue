@@ -1,9 +1,9 @@
 <template>
-  <div class="max-w-[1300px] mx-auto w-full px-4 md:px-6 flex flex-col gap-12 pb-24">
+  <div class="max-w-[1300px] mx-auto w-full px-4 md:px-6 flex flex-col gap-4 pt-6 pb-24">
     
     <!-- Top Achievers -->
     <div class="flex flex-col">
-      <div class="flex items-center justify-center gap-4 mb-8">
+      <div class="flex items-center justify-center gap-4 mb-4">
         <div class="h-px bg-purple-200 w-16 md:w-32 hidden md:block"></div>
         <div class="flex items-center gap-2">
           <span class="text-xl">🏆</span>
@@ -15,16 +15,16 @@
       <!-- Achievers Carousel -->
       <div class="relative w-full flex items-center group">
         <!-- Left Button -->
-        <button class="absolute left-0 w-8 h-8 rounded-full bg-purple-700 text-white flex items-center justify-center z-10 shadow-md transform -translate-x-1/2">
+        <button @click="scrollLeft(achieversRef)" class="absolute left-0 w-8 h-8 rounded-full bg-purple-700 text-white flex items-center justify-center z-10 shadow-md transform -translate-x-1/2 hover:scale-110 transition-transform">
           <span class="material-symbols-outlined text-[18px]">chevron_left</span>
         </button>
         
-        <div class="w-full flex overflow-x-auto scrollbar-hide gap-4 md:gap-6 py-2 px-6">
+        <div ref="achieversRef" class="w-full flex overflow-x-auto scrollbar-hide gap-4 md:gap-6 py-2 px-6" style="scroll-behavior: smooth;">
           
           <!-- Student 1 -->
           <div class="flex-1 min-w-[250px] bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex items-center gap-4">
             <div class="w-16 h-16 rounded-lg bg-gray-200 overflow-hidden shrink-0">
-              <img src="https://via.placeholder.com/100x100?text=Girl" alt="Ananya" class="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=100&auto=format&fit=crop" alt="Ananya" class="w-full h-full object-cover" />
             </div>
             <div class="flex flex-col">
               <span class="text-[#311b92] font-bold text-[13px]">State 2nd Rank</span>
@@ -36,7 +36,7 @@
           <!-- Student 2 -->
           <div class="flex-1 min-w-[250px] bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex items-center gap-4">
             <div class="w-16 h-16 rounded-lg bg-gray-200 overflow-hidden shrink-0">
-              <img src="https://via.placeholder.com/100x100?text=Boy" alt="Student" class="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=100&auto=format&fit=crop" alt="Student" class="w-full h-full object-cover" />
             </div>
             <div class="flex flex-col">
               <span class="text-[#311b92] font-bold text-[13px]">District Topper</span>
@@ -48,7 +48,7 @@
           <!-- Student 3 -->
           <div class="flex-1 min-w-[250px] bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex items-center gap-4">
             <div class="w-16 h-16 rounded-lg bg-gray-200 overflow-hidden shrink-0">
-              <img src="https://via.placeholder.com/100x100?text=Girl" alt="Student" class="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1577880216142-8549e9488dad?q=80&w=100&auto=format&fit=crop" alt="Student" class="w-full h-full object-cover" />
             </div>
             <div class="flex flex-col">
               <span class="text-[#311b92] font-bold text-[13px]">98.6% Overall</span>
@@ -56,18 +56,52 @@
             </div>
           </div>
           
+          <!-- Student 4 (Duplicate) -->
+          <div class="flex-1 min-w-[250px] bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex items-center gap-4">
+            <div class="w-16 h-16 rounded-lg bg-gray-200 overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=100&auto=format&fit=crop" alt="Student" class="w-full h-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[#311b92] font-bold text-[13px]">School Topper</span>
+              <span class="text-gray-900 font-black text-[12px] leading-tight">615 / 625 Marks</span>
+              <span class="text-gray-500 text-[9px] mt-1">Karnataka State Board 2024</span>
+            </div>
+          </div>
+          
+          <!-- Student 5 (Duplicate) -->
+          <div class="flex-1 min-w-[250px] bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex items-center gap-4">
+            <div class="w-16 h-16 rounded-lg bg-gray-200 overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=100&auto=format&fit=crop" alt="Student" class="w-full h-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[#311b92] font-bold text-[13px]">100/100 Math</span>
+              <span class="text-gray-900 font-black text-[12px] leading-tight">CBSE Board 2024</span>
+            </div>
+          </div>
+          
+          <!-- Student 6 (Duplicate) -->
+          <div class="flex-1 min-w-[250px] bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex items-center gap-4">
+            <div class="w-16 h-16 rounded-lg bg-gray-200 overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=100&auto=format&fit=crop" alt="Student" class="w-full h-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[#311b92] font-bold text-[13px]">99.2% Overall</span>
+              <span class="text-gray-900 font-black text-[12px] leading-tight">ICSE Board 2024</span>
+            </div>
+          </div>
+          
         </div>
         
         <!-- Right Button -->
-        <button class="absolute right-0 w-8 h-8 rounded-full bg-purple-700 text-white flex items-center justify-center z-10 shadow-md transform translate-x-1/2">
+        <button @click="scrollRight(achieversRef)" class="absolute right-0 w-8 h-8 rounded-full bg-purple-700 text-white flex items-center justify-center z-10 shadow-md transform translate-x-1/2 hover:scale-110 transition-transform">
           <span class="material-symbols-outlined text-[18px]">chevron_right</span>
         </button>
       </div>
     </div>
     
     <!-- Parents Speak -->
-    <div class="flex flex-col mt-4">
-      <div class="flex items-center justify-center gap-4 mb-8">
+    <div class="flex flex-col">
+      <div class="flex items-center justify-center gap-4 mb-4">
         <div class="h-px bg-purple-200 w-16 md:w-32 hidden md:block"></div>
         <div class="flex items-center gap-2">
           <span class="text-xl text-red-500">❤️</span>
@@ -79,16 +113,16 @@
       <!-- Testimonials Carousel -->
       <div class="relative w-full flex items-center group">
         <!-- Left Button -->
-        <button class="absolute left-0 w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center z-10 shadow-md transform -translate-x-1/2">
+        <button @click="scrollLeft(parentsRef)" class="absolute left-0 w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center z-10 shadow-md transform -translate-x-1/2 hover:scale-110 transition-transform">
           <span class="material-symbols-outlined text-[14px]">chevron_left</span>
         </button>
         
-        <div class="w-full flex overflow-x-auto scrollbar-hide gap-4 md:gap-6 py-2 px-4">
+        <div ref="parentsRef" class="w-full flex overflow-x-auto scrollbar-hide gap-4 md:gap-6 py-2 px-4" style="scroll-behavior: smooth;">
           
           <!-- Parent 1 -->
           <div class="flex-1 min-w-[280px] bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex items-start gap-4">
             <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
-              <img src="https://via.placeholder.com/50x50?text=Mom" alt="Parent" class="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=100&auto=format&fit=crop" alt="Parent" class="w-full h-full object-cover" />
             </div>
             <div class="flex flex-col">
               <div class="flex text-[#ffb300] text-[10px] mb-1">
@@ -106,7 +140,7 @@
           <!-- Parent 2 -->
           <div class="flex-1 min-w-[280px] bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex items-start gap-4">
             <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
-              <img src="https://via.placeholder.com/50x50?text=Mom" alt="Parent" class="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100&auto=format&fit=crop" alt="Parent" class="w-full h-full object-cover" />
             </div>
             <div class="flex flex-col">
               <div class="flex text-[#ffb300] text-[10px] mb-1">
@@ -124,7 +158,7 @@
           <!-- Parent 3 -->
           <div class="flex-1 min-w-[280px] bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex items-start gap-4">
             <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
-              <img src="https://via.placeholder.com/50x50?text=Dad" alt="Parent" class="w-full h-full object-cover" />
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop" alt="Parent" class="w-full h-full object-cover" />
             </div>
             <div class="flex flex-col">
               <div class="flex text-[#ffb300] text-[10px] mb-1">
@@ -139,10 +173,46 @@
             </div>
           </div>
           
+          <!-- Parent 4 (Duplicate) -->
+          <div class="flex-1 min-w-[280px] bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1544168190-79c154273140?q=80&w=100&auto=format&fit=crop" alt="Parent" class="w-full h-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <div class="flex text-[#ffb300] text-[10px] mb-1">
+                <span class="material-symbols-outlined text-[12px] font-bold">star</span>
+                <span class="material-symbols-outlined text-[12px] font-bold">star</span>
+                <span class="material-symbols-outlined text-[12px] font-bold">star</span>
+                <span class="material-symbols-outlined text-[12px] font-bold">star</span>
+                <span class="material-symbols-outlined text-[12px] font-bold">star</span>
+              </div>
+              <p class="text-gray-600 text-[10px] leading-tight mb-2">The teachers are incredibly supportive and always clarify doubts.</p>
+              <span class="text-[#311b92] font-bold text-[10px]">- Sunita, Parent</span>
+            </div>
+          </div>
+          
+          <!-- Parent 5 (Duplicate) -->
+          <div class="flex-1 min-w-[280px] bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden shrink-0">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Parent" class="w-full h-full object-cover" />
+            </div>
+            <div class="flex flex-col">
+              <div class="flex text-[#ffb300] text-[10px] mb-1">
+                <span class="material-symbols-outlined text-[12px] font-bold">star</span>
+                <span class="material-symbols-outlined text-[12px] font-bold">star</span>
+                <span class="material-symbols-outlined text-[12px] font-bold">star</span>
+                <span class="material-symbols-outlined text-[12px] font-bold">star</span>
+                <span class="material-symbols-outlined text-[12px] font-bold">star</span>
+              </div>
+              <p class="text-gray-600 text-[10px] leading-tight mb-2">Affordable and effective! The best investment we made this year.</p>
+              <span class="text-[#311b92] font-bold text-[10px]">- Anjali, Parent</span>
+            </div>
+          </div>
+          
         </div>
         
         <!-- Right Button -->
-        <button class="absolute right-0 w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center z-10 shadow-md transform translate-x-1/2">
+        <button @click="scrollRight(parentsRef)" class="absolute right-0 w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center z-10 shadow-md transform translate-x-1/2 hover:scale-110 transition-transform">
           <span class="material-symbols-outlined text-[14px]">chevron_right</span>
         </button>
       </div>
@@ -152,6 +222,47 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const achieversRef = ref(null)
+const parentsRef = ref(null)
+
+const scrollLeft = (containerRef) => {
+  if (containerRef) {
+    containerRef.scrollBy({ left: -300, behavior: 'smooth' })
+  }
+}
+
+const scrollRight = (containerRef) => {
+  if (containerRef) {
+    containerRef.scrollBy({ left: 300, behavior: 'smooth' })
+  }
+}
+
+let intervalId = null
+
+const autoScroll = () => {
+  const scrollContainer = (containerRef) => {
+    if (!containerRef) return
+    const maxScroll = containerRef.scrollWidth - containerRef.clientWidth
+    if (containerRef.scrollLeft >= maxScroll - 10) {
+      containerRef.scrollTo({ left: 0, behavior: 'smooth' })
+    } else {
+      containerRef.scrollBy({ left: 300, behavior: 'smooth' })
+    }
+  }
+  
+  scrollContainer(achieversRef.value)
+  scrollContainer(parentsRef.value)
+}
+
+onMounted(() => {
+  intervalId = setInterval(autoScroll, 3500)
+})
+
+onUnmounted(() => {
+  if (intervalId) clearInterval(intervalId)
+})
 </script>
 
 <style scoped>

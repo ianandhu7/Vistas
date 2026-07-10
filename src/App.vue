@@ -3,7 +3,7 @@ import { onMounted, watch } from 'vue'
 import { RouterView } from 'vue-router'
 import AppNavbar from './components/layout/AppNavbar.vue'
 import AppFooter from './components/layout/AppFooter.vue'
-import VerifyModal from './components/auth/VerifyModal.vue'
+
 import { useRoute } from 'vue-router'
 import { useThemeStore } from './stores/theme'
 import { useAuthStore } from './stores/auth'
@@ -15,13 +15,6 @@ const authStore = useAuthStore()
 const subscriptionStore = useSubscriptionStore()
 const route = useRoute()
 
-watch(() => route.path, (newPath) => {
-  if ((newPath === '/' || newPath === '/pricing') && !authStore.isVerified) {
-    setTimeout(() => {
-      authStore.openVerifyModal()
-    }, 1500)
-  }
-}, { immediate: true })
 
 onMounted(() => {
   themeStore.initTheme()
@@ -40,17 +33,15 @@ onMounted(() => {
     <main class="flex-1 min-h-0 flex flex-col">
       <RouterView />
     </main>
-    <VerifyModal />
   </div>
 </template>
 
 <style>
 .app-container {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   position: relative;
   background-color: var(--bg-main);
   color: var(--text-primary);

@@ -560,20 +560,7 @@ export const useSubscriptionStore = defineStore('subscription', {
       try {
         let userData = null
 
-        // --- DEVELOPMENT MOCK BYPASS ---
-        if (fullOtp === '123456') {
-          console.warn('USING MOCK OTP BYPASS (123456)')
-          userData = {
-            // Need a valid-looking JWT format (header.payload.signature) to prevent atob errors if any local code parses it
-            accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1vY2sgVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
-            refreshToken: 'mock-refresh-token',
-            userSurId: 999999,
-            firstName: this.userName || 'Mock',
-            lastName: 'User',
-            mobileNumber: this.mobileNumber,
-            subscriptionFlag: false, 
-          }
-        } else if (this.isExistingUser) {
+        if (this.isExistingUser) {
           // Existing user — verify OTP and get token directly
           const result = await verifyOtpExistingUser(
             this.mobileNumber,
@@ -663,13 +650,7 @@ export const useSubscriptionStore = defineStore('subscription', {
           return
         }
 
-        // --- DEVELOPMENT MOCK: Stop here so user stays on home page ---
-        if (fullOtp === '123456') {
-          this.closeModal()
-          this.loading = false
-          this.showToast('Successfully verified!')
-          return
-        }
+
 
         await this.initiateCheckoutPayment(userData.accessToken)
 

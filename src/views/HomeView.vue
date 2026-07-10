@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex flex-col overflow-hidden bg-gray-50 relative">
+  <div class="min-h-screen flex flex-col bg-gray-50 relative pb-20">
 
     <!-- Navbar (takes real space at top) -->
     <AppNavbar />
@@ -7,8 +7,8 @@
     <!-- Yaha se blue wala background ka code hai (Right side blue background) -->
     <div class="hidden md:block absolute top-[20px] bottom-0 right-0 w-[20%] bg-[#004a8b] z-0" style="border-top-left-radius: 40%; border-bottom-left-radius: 100% 100%;"></div>
 
-    <!-- Main hero content (fills remaining height) -->
-    <div class="flex-1 min-h-0 flex flex-col relative z-10">
+    <!-- Main hero content -->
+    <div class="flex flex-col relative z-10 w-full overflow-x-hidden">
       <HeroSection />
     </div>
 
@@ -111,8 +111,13 @@ const pulseStyle = reactive({})
 const sparkles = ref([])
 
 function showArrowGuide() {
-  const continueBtn = document.getElementById('continue-btn')
-  if (!continueBtn) return
+  let continueBtn = document.getElementById('continue-btn-mobile');
+  // Check if mobile button exists and is visible (offsetParent is not null when visible)
+  if (!continueBtn || continueBtn.offsetParent === null) {
+    continueBtn = document.getElementById('continue-btn-desktop');
+  }
+  
+  if (!continueBtn || continueBtn.offsetParent === null) return;
 
   const btnRect = continueBtn.getBoundingClientRect()
 
