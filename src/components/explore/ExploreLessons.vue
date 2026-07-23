@@ -106,23 +106,23 @@ const lessonsRef = ref(null)
 const lessons = [
   {
     title: 'Ab Hoga Hisaab',
-    videoUrl: '/video 1.mp4'
+    videoUrl: '/intro-1.webm'
   },
   {
     title: 'Chemistry Essentials',
-    videoUrl: '/video 2.mp4'
+    videoUrl: '/intro-2.webm'
   },
   {
     title: 'Physics in Action',
-    videoUrl: '/video 3.mp4'
+    videoUrl: '/intro-3.webm'
   },
   {
     title: 'Biology Basics',
-    videoUrl: '/video 4.mp4'
+    videoUrl: '/intro-1.webm'
   },
   {
     title: 'English & Grammar',
-    videoUrl: '/video 5.mp4'
+    videoUrl: '/intro-2.webm'
   }
 ]
 
