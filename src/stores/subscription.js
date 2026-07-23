@@ -496,6 +496,16 @@ export const useSubscriptionStore = defineStore('subscription', {
         return
       }
 
+      if (!/^[6-9]\d{9}$/.test(this.mobileNumber)) {
+        this.setError('Please enter a valid mobile number starting with 6-9')
+        return
+      }
+
+      if (/^([0-9])\1{9}$/.test(this.mobileNumber)) {
+        this.setError('Please enter a real mobile number, not repeated digits')
+        return
+      }
+
       this.loading = true
       this.error = null
 
@@ -613,6 +623,9 @@ export const useSubscriptionStore = defineStore('subscription', {
         this.accessToken = userData.accessToken
         this.userData = userData
 
+        // Set a 2-day token so HeroSection knows to skip OTP for this number
+        localStorage.setItem(`skip_otp_${this.mobileNumber}`, (Date.now() + 2 * 24 * 60 * 60 * 1000).toString())
+
         const subFlag = userData.subscriptionFlag
         const alreadySubscribed =
           subFlag === true ||
@@ -642,17 +655,18 @@ export const useSubscriptionStore = defineStore('subscription', {
           return
         }
 
-        // ── Skip checkout if requested (e.g., initial page load verify or hero flow) ──
-        if (skipCheckout || this.isHeroFlow) {
-          this.closeModal()
+        // ── Verification successful — automatically proceed to payment if a plan is selected ──
+        this.closeModal()
+        
+        if (this.selectedPlan) {
+          // Instead of a popup toast, directly go to the payment method!
+          this.initiateCheckoutPayment(this.accessToken)
+        } else {
           this.showToast('Successfully verified!')
           this.loading = false
-          return
         }
-
-
-
-        await this.initiateCheckoutPayment(userData.accessToken)
+        
+        return
 
       } catch (err) {
         console.error('Verify OTP error:', err)

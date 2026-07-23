@@ -1,281 +1,394 @@
 <template>
-  <div class="w-full h-full flex flex-col relative">
+  <div class="w-full flex-1 flex flex-col relative">
 
-    <!-- MOBILE VIEW (Natural scrolling layout) -->
-    <div class="flex md:hidden w-full relative flex-col pt-[85px] pb-10 px-4 z-10 overflow-visible">
+    <!-- MOBILE VIEW (Redesigned layout matching the screenshot UI exactly) -->
+    <div class="flex lg:hidden w-full flex-1 min-h-full relative flex-col justify-start pt-3 pb-2 z-10 bg-[#f0f0fb]">
       
-      <!-- Blue Curved Shape Background -->
-      <div class="absolute top-0 right-0 w-[55%] h-[60%] bg-[#004a8b] z-0" style="border-bottom-left-radius: 90%;"></div>
+      <!-- Pinned Mobile Background Doodles & Backdrop Shapes -->
+      <div class="absolute top-0 bottom-0 left-0 -right-4 pointer-events-none z-0 overflow-hidden">
+        <!-- Curved teal backdrop shape on the right edge (covers top right fully) -->
+        <svg class="absolute top-0 right-0 w-[56%] h-[60%] opacity-90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M100 0H35Q55 50 100 100Z" fill="#002e5c"/>
+        </svg>
 
-      <!-- TEXT AND FEATURES (Left Side) -->
-      <div class="w-full flex flex-col relative z-30">
-        <h1 class="text-[#002e5c] text-[28px] font-bold leading-tight tracking-tight">
+        <!-- Purple outline Star top left -->
+        <svg class="absolute top-[8%] left-[6%] w-5 h-5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="#7b7fc4" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499c.172-.468.868-.468 1.04 0l1.972 5.342 5.733.396c.502.035.702.651.314 1.006l-4.38 4.02 1.34 5.626c.117.492-.416.88-.85.65L12 18.066l-5.009 2.923c-.434.23-.967-.158-.85-.65l1.34-5.625-4.38-4.02c-.388-.355-.188-.971.314-1.006l5.733-.396 1.972-5.342z"/></svg>
+      </div>
+      
+      <!-- Top Header (Logo & Board Tag) -->
+      <div class="px-5 w-full flex items-center justify-between z-30 shrink-0">
+        <!-- Logo -->
+        <div class="w-max flex items-center">
+          <img 
+            src="/logo v.png" 
+            alt="Vista's Learning" 
+            class="h-9 w-auto object-contain" 
+            style="mix-blend-mode: multiply;"
+          />
+        </div>
+      </div>
+
+      <!-- Hero Title Area -->
+      <div class="px-5 w-full z-20 mt-5">
+        <h1 class="text-black text-[16px] font-bold leading-[1.1] tracking-tight">
           Give Your Child<br/>
-          <span class="text-[#0096c7] text-[42px] font-black inline-block mt-1">The Best</span><br/>
-          Learning Experience
+          <span class="relative text-[#0096c7] text-[22px] font-black inline-block mt-0.5 mb-0.5">
+            The Best
+            <span class="absolute bottom-0 left-0 w-full h-[2px] bg-[#f08a00] rounded-full"></span>
+          </span><br/>
+          <span class="text-[14px] font-bold">Learning Experience</span>
         </h1>
-        <div class="w-10 h-1.5 bg-[#f08a00] rounded-full mt-2 mb-3"></div>
-        <button class="bg-[#004a8b] text-white text-[12px] font-bold px-4 py-2 rounded-lg w-max shadow-sm tracking-wide mb-6">Karnataka State Board</button>
-        
-        <!-- Mobile Vertical Features List -->
-        <div class="flex flex-col gap-3 w-[65%]">
-          <!-- 1 -->
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-[#4a148c] flex flex-col items-center justify-center text-white shadow-sm shrink-0">
-              <span class="material-symbols-outlined text-[18px] leading-none">sensors</span>
-              <span class="text-[7px] font-bold leading-none mt-0.5 tracking-widest">LIVE</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-[#4a148c] text-[12px] font-bold uppercase leading-tight tracking-tight">Live Classes</span>
-              <span class="text-gray-500 text-[10px] leading-[1.2]">Learn from expert teachers in real-time</span>
-            </div>
-          </div>
-          <!-- 2 -->
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-[#f08a00] flex items-center justify-center text-white shadow-sm shrink-0">
-              <span class="material-symbols-outlined text-[20px]">slideshow</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-[#f08a00] text-[12px] font-bold uppercase leading-tight tracking-tight">Animated Lessons</span>
-              <span class="text-gray-500 text-[10px] leading-[1.2]">Concepts explained with fun & easy animations</span>
-            </div>
-          </div>
-          <!-- 3 -->
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-[#1565c0] flex items-center justify-center text-white shadow-sm shrink-0">
-              <span class="material-symbols-outlined text-[20px]">library_books</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-[#1565c0] text-[12px] font-bold uppercase leading-tight tracking-tight">All Six Subjects</span>
-              <span class="text-gray-500 text-[10px] leading-[1.2]">Maths, Science, Social Science, English, Kannada & Hindi</span>
-            </div>
-          </div>
-          <!-- 4 -->
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-[#2e7d32] flex items-center justify-center text-white shadow-sm shrink-0">
-              <span class="material-symbols-outlined text-[20px]">fact_check</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-[#2e7d32] text-[12px] font-bold uppercase leading-tight tracking-tight">Tests</span>
-              <span class="text-gray-500 text-[10px] leading-[1.2]">Chapter-wise & full syllabus tests</span>
-            </div>
-          </div>
-          <!-- 5 -->
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-[#c2185b] flex items-center justify-center text-white shadow-sm shrink-0">
-              <span class="material-symbols-outlined text-[20px]">description</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-[#c2185b] text-[12px] font-bold uppercase leading-tight tracking-tight">Study Notes</span>
-              <span class="text-gray-500 text-[10px] leading-[1.2]">Easy to understand notes for quick revision</span>
-            </div>
-          </div>
+        <!-- Board Tag -->
+        <div class="mt-2.5">
+          <span class="bg-[#002e5c] text-white text-[8.5px] font-extrabold px-3 py-1.5 rounded-[6px] shadow-sm tracking-wide inline-block">
+            Kerala State Board
+          </span>
         </div>
       </div>
 
-      <!-- IMAGE (Right Side Overlap) -->
-      <div class="absolute right-[-20px] top-[140px] w-[65%] h-[400px] z-20 flex justify-end items-end pointer-events-none">
-        <img :src="'/transparentpic.png.png'" alt="Mother and Child" class="h-full w-auto object-contain object-bottom origin-bottom drop-shadow-lg" />
+      <!-- Main Section: Vertical Features on Left & Teacher/Student Image on Right -->
+      <div class="px-5 w-full flex items-stretch justify-between z-20 mt-6 gap-3 relative">
+        <!-- Left Side: Vertical Features list (constrained to 48% width to avoid image collision, shifted up to align with image) -->
+        <div class="w-[48%] flex flex-col justify-start pt-1 pb-4 gap-4 z-20 relative -translate-y-2">
+          <!-- 1. Live Classes -->
+          <div class="flex items-center gap-2.5 bg-white rounded-[14px] p-2 border border-gray-100/50 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+            <div class="w-9 h-9 rounded-xl bg-[#5e35b1] flex flex-col items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
+              <span class="material-symbols-outlined text-[15px] leading-none">sensors</span>
+              <span class="text-[4px] font-black leading-none mt-0.5 text-white/90">LIVE</span>
+            </div>
+            <div class="flex flex-col min-w-0 flex-1">
+              <h4 class="font-bold text-[11px] text-black leading-tight line-clamp-1">Live Classes</h4>
+              <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5 line-clamp-2 break-words">Learn from experts<br/>in real-time</p>
+            </div>
+          </div>
+
+          <!-- 2. Animated Lessons -->
+          <div class="flex items-center gap-2.5 bg-white rounded-[14px] p-2 border border-gray-100/50 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+            <div class="w-9 h-9 rounded-xl bg-[#e91e63] flex items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
+              <span class="material-symbols-outlined text-[16px]">slideshow</span>
+            </div>
+            <div class="flex flex-col min-w-0 flex-1">
+              <h4 class="font-bold text-[11px] text-black leading-tight line-clamp-1">Animated Lessons</h4>
+              <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5 line-clamp-2 break-words">Concepts explained<br/>with fun animations</p>
+            </div>
+          </div>
+
+          <!-- 3. All Six Subjects -->
+          <div class="flex items-center gap-2.5 bg-white rounded-[14px] p-2 border border-gray-100/50 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+            <div class="w-9 h-9 rounded-xl bg-[#1976d2] flex items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
+              <span class="material-symbols-outlined text-[16px]">library_books</span>
+            </div>
+            <div class="flex flex-col min-w-0 flex-1">
+              <h4 class="font-bold text-[11px] text-black leading-tight line-clamp-1">All Six Subjects</h4>
+              <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5 line-clamp-2 break-words">Maths, Science,<br/>Social & Languages</p>
+            </div>
+          </div>
+
+          <!-- 4. Tests -->
+          <div class="flex items-center gap-2.5 bg-white rounded-[14px] p-2 border border-gray-100/50 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+            <div class="w-9 h-9 rounded-xl bg-[#43a047] flex items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
+              <span class="material-symbols-outlined text-[16px]">fact_check</span>
+            </div>
+            <div class="flex flex-col min-w-0 flex-1">
+              <h4 class="font-bold text-[11px] text-black leading-tight line-clamp-1">Tests</h4>
+              <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5 line-clamp-2 break-words">Chapter-wise &<br/>full syllabus tests</p>
+            </div>
+          </div>
+
+          <!-- 5. Study Notes -->
+          <div class="flex items-center gap-2.5 bg-white rounded-[14px] p-2 border border-gray-100/50 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+            <div class="w-9 h-9 rounded-xl bg-[#ff9800] flex items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
+              <span class="material-symbols-outlined text-[18px]">description</span>
+            </div>
+            <div class="flex flex-col min-w-0 flex-1">
+              <h4 class="font-bold text-[11px] text-black leading-tight line-clamp-1">Study Notes</h4>
+              <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5 line-clamp-2 break-words">Simple notes for<br/>quick revision</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Teacher/Student Image (Fully visible, absolute styled to align on the right) -->
+        <div class="absolute right-0 bottom-0 top-0 w-[48%] flex items-end justify-end pointer-events-none z-10 overflow-visible">
+          <img 
+            :src="'/transparentpic.png.png?v=2'" 
+            alt="Teacher and Student" 
+            class="w-[135%] max-w-none h-auto object-contain object-right-bottom -translate-y-6" 
+          />
+        </div>
       </div>
 
-      <!-- FORM (Bottom Overlap) -->
-      <div class="relative w-full bg-white rounded-[24px] shadow-2xl p-4 z-40 border border-gray-100 flex flex-col gap-4 mt-8">
-        <!-- Stats Row -->
-        <div class="flex gap-3 w-full">
-          <div class="flex-1 bg-white border border-gray-100 rounded-xl p-2 flex gap-3 items-center shadow-sm">
-            <div class="w-10 h-10 rounded-full bg-[#004a8b] text-white flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-[20px]">school</span>
-            </div>
-            <div class="flex flex-col">
-              <h4 class="text-[#002e5c] text-[14px] font-black leading-none">19+<br/>Courses</h4>
-              <p class="text-[8px] text-gray-500 leading-[1.2] mt-0.5">Designed to build<br/>concepts & skills</p>
-            </div>
-          </div>
-          <div class="flex-1 bg-white border border-gray-100 rounded-xl p-2 flex gap-3 items-center shadow-sm">
-            <div class="w-10 h-10 rounded-full bg-[#e11d48] text-white flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-[20px]">video_library</span>
-            </div>
-            <div class="flex flex-col">
-              <h4 class="text-[#002e5c] text-[14px] font-black leading-none">15,000+<br/>Video Library</h4>
-              <p class="text-[8px] text-gray-500 leading-[1.2] mt-0.5">Huge collection of videos<br/>for better learning</p>
-            </div>
-          </div>
-        </div>
-
-        <h3 class="text-[#004a8b] text-[14px] font-black text-center mt-2">
-          Three Simple Steps to <span class="text-[#f08a00]">Get Started</span>
-        </h3>
-        
-        <!-- Steps Graphic -->
-        <div class="flex justify-between relative w-full px-2 mb-2">
-          <!-- Step 1 -->
-          <div class="flex flex-col items-center gap-1.5 relative z-10 w-1/3">
-            <div class="relative w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center bg-white z-10">
-              <div class="absolute -top-[5px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#9c27b0] text-white flex items-center justify-center text-[8px] font-bold border border-white">1</div>
-              <span class="material-symbols-outlined text-gray-600 text-[18px]">phone_iphone</span>
-            </div>
-            <div class="text-center">
-              <h5 class="text-[7px] font-black text-[#002e5c] leading-tight mt-1">Enter Mobile Number</h5>
-              <p class="text-[6px] text-gray-500 mt-0.5 leading-tight">Enter your mobile<br/>number to sign up</p>
-            </div>
-          </div>
-          <!-- Step 2 -->
-          <div class="flex flex-col items-center gap-1.5 relative z-10 w-1/3">
-            <div class="relative w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center bg-white z-10">
-              <div class="absolute -top-[5px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#0060aa] text-white flex items-center justify-center text-[8px] font-bold border border-white">2</div>
-              <span class="material-symbols-outlined text-gray-600 text-[18px]">search</span>
-            </div>
-            <div class="text-center">
-              <h5 class="text-[7px] font-black text-[#002e5c] leading-tight mt-1">Explore & Learn</h5>
-              <p class="text-[6px] text-gray-500 mt-0.5 leading-tight">Check features, explore<br/>videos and all</p>
-            </div>
-          </div>
-          <!-- Step 3 -->
-          <div class="flex flex-col items-center gap-1.5 relative z-10 w-1/3">
-            <div class="relative w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center bg-white z-10">
-              <div class="absolute -top-[5px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#f08a00] text-white flex items-center justify-center text-[8px] font-bold border border-white">3</div>
-              <span class="material-symbols-outlined text-gray-600 text-[18px]">shield_lock</span>
-            </div>
-            <div class="text-center">
-              <h5 class="text-[7px] font-black text-[#002e5c] leading-tight mt-1">Secure Payment</h5>
-              <p class="text-[6px] text-gray-500 mt-0.5 leading-tight">Make a secure payment<br/>and start using</p>
-            </div>
-          </div>
-          <div class="absolute top-[18px] left-[20%] right-[20%] h-[1px] border-t border-dashed border-gray-300 z-0"></div>
-        </div>
-
-        <!-- Input & Button -->
-        <div class="w-full flex flex-col gap-2 z-10">
-          <div class="flex rounded-lg border border-gray-300 overflow-hidden shadow-sm h-12 bg-white">
-            <div class="bg-gray-50 px-4 flex items-center justify-center border-r border-gray-300 text-[14px] font-semibold text-gray-700">+91</div>
-            <input 
-              v-model="mobileInput"
-              @keypress="e => { if (!/[0-9]/.test(e.key)) e.preventDefault(); }"
-              type="tel" 
-              maxlength="10"
-              placeholder="Enter Mobile Number" 
-              class="flex-1 px-4 outline-none text-[14px] text-gray-800 font-medium placeholder-gray-400" 
-            />
-          </div>
+      <!-- Combined Stats & Signup Form in one Card (Sits at the bottom naturally in flexbox) -->
+      <div class="w-full pb-2 px-4 z-20 shrink-0 mt-auto mt-2.5">
+        <div class="bg-white rounded-[24px] shadow-2xl border border-gray-100/60 p-3 flex flex-col gap-2">
           
-          <button 
-            id="continue-btn-mobile"
-            @click="handleContinue"
-            :disabled="store.loading"
-            class="w-full bg-[#004a8b] hover:bg-[#003666] text-white font-bold tracking-wider rounded-lg h-12 transition-all duration-200 flex items-center justify-center gap-2 text-[14px] disabled:opacity-70 shadow-sm"
-          >
-            <span v-if="store.loading" class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-            {{ store.loading ? 'SENDING...' : 'CONTINUE' }}
-          </button>
-          
-          <div class="flex items-center justify-center gap-1.5 text-[10px] font-semibold text-gray-500">
-            <span class="material-symbols-outlined text-[12px] text-green-600">lock</span>
-            No Spam | 100% Secure
+          <!-- Combined Component Part 1: Stats Badges (Horizontal row inside card with separate themed backgrounds) -->
+          <div class="flex gap-2 items-stretch">
+            <!-- 19+ Courses -->
+            <div class="flex-1 flex gap-2 items-center bg-[#f0f7ff] rounded-[14px] p-1.5 px-2 border border-blue-100/50 shadow-[0_2px_8px_rgba(0,74,139,0.03)]">
+              <div class="w-[26px] h-[26px] rounded-full bg-[#004a8b] text-white flex items-center justify-center shrink-0 shadow-sm">
+                <span class="material-symbols-outlined text-[13px]">school</span>
+              </div>
+              <div class="flex flex-col min-w-0 flex-1">
+                <h4 class="text-[#002e5c] text-[9.5px] font-black leading-tight">19+ Courses</h4>
+                <p class="text-[6px] text-gray-500 leading-tight mt-0.5 font-medium">Designed to build concepts & skills</p>
+              </div>
+            </div>
+            <!-- 15,000+ Video Library -->
+            <div class="flex-1 flex gap-2 items-center bg-[#fff1f2] rounded-[14px] p-1.5 px-2 border border-rose-100/50 shadow-[0_2px_8px_rgba(225,29,72,0.03)]">
+              <div class="w-[26px] h-[26px] rounded-lg bg-[#e11d48] text-white flex items-center justify-center shrink-0 shadow-sm p-1">
+                <svg class="w-full h-full text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2.5" />
+                  <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="2 2" />
+                  <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="2 2" />
+                  <polygon points="10 11 10 15 14 13" fill="currentColor" />
+                </svg>
+              </div>
+              <div class="flex flex-col min-w-0 flex-1">
+                <h4 class="text-[#002e5c] text-[9.5px] font-black leading-tight">15,000+ Video</h4>
+                <p class="text-[6px] text-gray-500 leading-tight mt-0.5 font-medium">Huge collection for better learning</p>
+              </div>
+            </div>
           </div>
+
+          <!-- Divider Line -->
+          <div class="h-[1px] bg-gray-100/80 w-full my-0"></div>
+
+          <!-- Combined Component Part 2: Form & Steps -->
+          <div class="flex flex-col items-center">
+            <h3 class="text-[#002e5c] text-[11.5px] font-black text-center mb-1.5">
+              Three Simple Steps to <span class="text-[#f08a00]">Get Started</span>
+            </h3>
+            
+            <!-- Steps Graphic -->
+            <div class="flex justify-between relative w-full px-2 mb-1.5">
+              <!-- Step 1 -->
+              <div class="flex flex-col items-center gap-0.5 relative z-10 w-1/3">
+                <div class="relative w-6 h-6 rounded-full border border-gray-200/80 flex items-center justify-center bg-white z-10 shadow-sm">
+                  <div class="absolute -top-[3px] left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#9c27b0] text-white flex items-center justify-center text-[6px] font-bold border border-white">1</div>
+                  <span class="material-symbols-outlined text-slate-500 text-[11px]">smartphone</span>
+                </div>
+                <div class="text-center mt-1">
+                  <h5 class="text-[7.5px] font-black text-[#002e5c] leading-tight">Enter Mobile Number</h5>
+                  <p class="text-[6px] text-gray-500 mt-0.5 leading-tight">Enter your mobile number to sign up</p>
+                </div>
+              </div>
+              <!-- Step 2 -->
+              <div class="flex flex-col items-center gap-0.5 relative z-10 w-1/3">
+                <div class="relative w-6 h-6 rounded-full border border-gray-200/80 flex items-center justify-center bg-white z-10 shadow-sm">
+                  <div class="absolute -top-[3px] left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#0060aa] text-white flex items-center justify-center text-[6px] font-bold border border-white">2</div>
+                  <span class="material-symbols-outlined text-slate-500 text-[11px]">search</span>
+                </div>
+                <div class="text-center mt-1">
+                  <h5 class="text-[7.5px] font-black text-[#002e5c] leading-tight">Explore & Learn</h5>
+                  <p class="text-[6px] text-gray-500 mt-0.5 leading-tight">Check features, explore videos and all</p>
+                </div>
+              </div>
+              <!-- Step 3 -->
+              <div class="flex flex-col items-center gap-0.5 relative z-10 w-1/3">
+                <div class="relative w-6 h-6 rounded-full border border-gray-200/80 flex items-center justify-center bg-white z-10 shadow-sm">
+                  <div class="absolute -top-[3px] left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#f08a00] text-white flex items-center justify-center text-[6px] font-bold border border-white">3</div>
+                  <span class="material-symbols-outlined text-slate-500 text-[11px]">security</span>
+                </div>
+                <div class="text-center mt-1">
+                  <h5 class="text-[7.5px] font-black text-[#002e5c] leading-tight">Secure Payment</h5>
+                  <p class="text-[6px] text-gray-500 mt-0.5 leading-tight">Make a secure payment & start learning</p>
+                </div>
+              </div>
+              
+              <!-- Connecting Line -->
+              <div class="absolute top-[12px] left-[20%] right-[20%] h-[1px] border-t border-dashed border-gray-200 z-0"></div>
+            </div>
+
+            <!-- Input & Button -->
+            <div class="w-full flex flex-col gap-2 z-10">
+              <div class="flex rounded-[10px] border border-gray-300 overflow-hidden shadow-sm h-9 bg-white">
+                <div class="bg-gray-50 px-3 flex items-center justify-center border-r border-gray-300 text-[11.5px] font-semibold text-gray-700">
+                  +91
+                </div>
+                <input 
+                  v-model="mobileInput"
+                  @keypress="e => { if (!/[0-9]/.test(e.key)) e.preventDefault(); }"
+                  type="tel" 
+                  maxlength="10"
+                  placeholder="Enter Mobile Number" 
+                  class="flex-1 px-3 outline-none text-[11.5px] text-gray-800 font-medium placeholder-gray-400" 
+                />
+              </div>
+              
+              <button 
+                id="continue-btn-mobile"
+                @click="handleContinue"
+                :disabled="store.loading"
+                class="w-full bg-[#002e5c] hover:bg-[#001c3d] text-white font-bold tracking-wider rounded-[10px] h-9 transition-all duration-200 flex items-center justify-center gap-2 text-[12px] disabled:opacity-70 shadow-md"
+              >
+                <span v-if="store.loading" class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                {{ store.loading ? 'SENDING...' : 'CONTINUE' }}
+              </button>
+              <p v-if="successMessage" class="text-green-600 text-[9.5px] text-center font-bold m-0">{{ successMessage }}</p>
+              <p v-else-if="localError || store.error" class="text-red-500 text-[9.5px] text-center font-bold m-0">{{ localError || store.error }}</p>
+              
+              <div class="flex items-center justify-center gap-1.5 text-[8.5px] font-semibold text-gray-400 mt-0.5">
+                <span class="material-symbols-outlined text-[10.5px] text-green-600">lock</span>
+                No Spam | 100% Secure
+              </div>
+            </div>
         </div>
       </div>
     </div>
+  </div>
 
     <!-- DESKTOP VIEW (Standard row layout) -->
-    <div class="hidden relative w-full h-full pt-[80px] pb-4 px-4 md:px-[48px] md:flex flex-col md:flex-row items-center justify-between gap-4 z-10">
+    <div class="hidden relative w-full h-full py-2 px-6 lg:px-12 lg:flex flex-row items-center justify-between z-10">
+
+
 
     <!-- LEFT: Main Text & Features -->
-    <div class="w-full md:w-[35%] h-full flex flex-col justify-center gap-4 lg:gap-8 relative z-30">
-      <div class="flex flex-col gap-2 items-start shrink-0">
-        <h1 class="text-[#002e5c] text-3xl md:text-[42px] font-bold leading-[1.1] tracking-tight">
+    <div class="w-full md:w-[35%] h-full flex flex-col justify-center gap-2 lg:gap-3 relative z-30">
+      <div class="flex flex-col gap-1 items-start shrink-0">
+        <h1 class="text-[#002e5c] text-3xl md:text-[30px] lg:text-[36px] font-bold leading-[1.1] tracking-tight">
           Give Your Child<br/>
-          <span class="text-[#0096c7] text-4xl md:text-[65px] font-black tracking-normal inline-block my-1">The Best</span><br/>
+          <span class="text-[#0096c7] text-4xl md:text-[42px] lg:text-[54px] font-black tracking-normal inline-block my-0 lg:my-1">The Best</span><br/>
           Learning Experience
         </h1>
-        <div class="w-12 h-1.5 bg-[#f08a00] rounded-full mt-2 mb-4"></div>
+        <div class="w-12 h-1.5 bg-[#f08a00] rounded-full mt-1 mb-2"></div>
         
-        <button class="bg-[#004a8b] hover:bg-[#003666] text-white text-[14px] font-bold px-8 py-3 rounded-[30px] transition-colors tracking-wide shadow-md">
+        <button class="bg-[#004a8b] hover:bg-[#003666] text-white text-[12px] lg:text-[13px] font-bold px-6 py-2 lg:px-7 lg:py-2.5 rounded-[30px] transition-colors tracking-wide shadow-md">
           Karnataka State Board
         </button>
       </div>
       
-      <!-- Feature Grid Card (Horizontal Pill) -->
-      <div class="flex flex-row items-start justify-between bg-white rounded-[20px] md:rounded-[30px] shadow-xl border border-gray-100 p-3 md:p-4 w-full md:w-[115%] relative z-40 overflow-x-auto scrollbar-hide gap-2 md:gap-0">
-        <!-- Feature 1 -->
-        <div class="flex flex-col items-center text-center flex-1 shrink-0 gap-1 px-1 md:border-r border-gray-100 min-w-[70px]">
-          <div class="w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-xl bg-[#283593] flex flex-col items-center justify-center text-white shadow-md">
-            <span class="material-symbols-outlined text-[18px] font-black leading-none">sensors</span>
-            <span class="text-[7px] font-bold tracking-wider leading-none mt-0.5">LIVE</span>
-
+      <!-- Feature Grid Container with Shadow -->
+      <div class="flex flex-row items-start justify-between bg-white rounded-[24px] shadow-[0_12px_36px_rgba(0,0,0,0.06)] border border-gray-100/60 p-3 lg:p-4 w-full md:w-[115%] relative z-40 overflow-x-auto scrollbar-hide gap-1 md:gap-0 mt-4">
+        <!-- Feature 1: Live Classes -->
+        <div class="uiverse-card shrink-0" style="--theme-color: #8E2DE2;">
+          <div class="first-content">
+            <div class="w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-xl bg-gradient-to-br from-[#8E2DE2] to-[#4A00E0] shadow-[0_4px_12px_rgba(74,0,224,0.35)] flex flex-col items-center justify-center text-white border border-white/20">
+              <span class="material-symbols-outlined text-[18px] font-black leading-none drop-shadow-sm">sensors</span>
+              <span class="text-[7px] font-black tracking-wider leading-none mt-[2px] text-white/90">LIVE</span>
+            </div>
+            <p class="font-black text-[9px] leading-tight text-[#002e5c] mt-1 text-center">Live<br/>Classes</p>
           </div>
-          <p class="font-bold text-[9px] leading-tight text-[#283593] uppercase mt-1">Live<br/>Classes</p>
-          <p class="text-[7px] leading-[1.1] text-gray-500 max-w-[80px] hidden md:block">Learn from expert teachers in real-time</p>
+          <div class="second-content bg-gradient-to-br from-[#8E2DE2] to-[#4A00E0]">
+            <p class="text-white text-[7px] leading-[1.1] font-bold text-center px-1">Learn from expert teachers in real-time</p>
+          </div>
         </div>
-        <!-- Feature 2 -->
 
-        <div class="flex flex-col items-center text-center flex-1 shrink-0 gap-1 px-1 md:border-r border-gray-100 min-w-[70px]">
-          <div class="w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-xl bg-[#f57c00] flex items-center justify-center text-white shadow-md">
-            <span class="material-symbols-outlined text-[20px] md:text-[24px] font-black">slideshow</span>
-
+        <!-- Feature 2: Animated Lessons -->
+        <div class="uiverse-card shrink-0" style="--theme-color: #FF512F;">
+          <div class="first-content">
+            <div class="w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-xl bg-gradient-to-br from-[#FF512F] to-[#DD2476] shadow-[0_4px_12px_rgba(221,36,118,0.35)] flex items-center justify-center text-white border border-white/20">
+              <span class="material-symbols-outlined text-[20px] md:text-[24px] font-black drop-shadow-sm">slideshow</span>
+            </div>
+            <p class="font-black text-[9px] leading-tight text-[#002e5c] mt-1 text-center">Animated<br/>Lessons</p>
           </div>
-          <p class="font-bold text-[9px] leading-tight text-[#f57c00] uppercase mt-1">Animated<br/>Lessons</p>
-          <p class="text-[7px] leading-[1.1] text-gray-500 max-w-[80px] hidden md:block">Concepts explained with fun animations</p>
+          <div class="second-content bg-gradient-to-br from-[#FF512F] to-[#DD2476]">
+            <p class="text-white text-[7px] leading-[1.1] font-bold text-center px-1">Concepts explained with fun animations</p>
+          </div>
         </div>
-        <!-- Feature 3 -->
 
-        <div class="flex flex-col items-center text-center flex-1 shrink-0 gap-1 px-1 md:border-r border-gray-100 min-w-[70px]">
-          <div class="w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-xl bg-[#1976d2] flex items-center justify-center text-white shadow-md">
-            <span class="material-symbols-outlined text-[20px] md:text-[24px] font-black">library_books</span>
-
+        <!-- Feature 3: All Six Subjects -->
+        <div class="uiverse-card shrink-0" style="--theme-color: #4776E6;">
+          <div class="first-content">
+            <div class="w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-xl bg-gradient-to-br from-[#4776E6] to-[#8E54E9] shadow-[0_4px_12px_rgba(142,84,233,0.35)] flex items-center justify-center text-white border border-white/20">
+              <span class="material-symbols-outlined text-[20px] md:text-[24px] font-black drop-shadow-sm">library_books</span>
+            </div>
+            <p class="font-black text-[9px] leading-tight text-[#002e5c] mt-1 text-center">All Six<br/>Subjects</p>
           </div>
-          <p class="font-bold text-[9px] leading-tight text-[#1976d2] uppercase mt-1">All Six<br/>Subjects</p>
-          <p class="text-[7px] leading-[1.1] text-gray-500 max-w-[80px] hidden md:block">Maths, Science, Social, English...</p>
+          <div class="second-content bg-gradient-to-br from-[#4776E6] to-[#8E54E9]">
+            <p class="text-white text-[7px] leading-[1.1] font-bold text-center px-1">Maths, Science, Social, English...</p>
+          </div>
         </div>
-        <!-- Feature 4 -->
 
-        <div class="flex flex-col items-center text-center flex-1 shrink-0 gap-1 px-1 md:border-r border-gray-100 min-w-[70px]">
-          <div class="w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-xl bg-[#388e3c] flex items-center justify-center text-white shadow-md">
-            <span class="material-symbols-outlined text-[20px] md:text-[24px] font-black">fact_check</span>
-
+        <!-- Feature 4: Tests -->
+        <div class="uiverse-card shrink-0" style="--theme-color: #11998e;">
+          <div class="first-content">
+            <div class="w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-xl bg-gradient-to-br from-[#11998e] to-[#38ef7d] shadow-[0_4px_12px_rgba(17,153,142,0.35)] flex items-center justify-center text-white border border-white/20">
+              <span class="material-symbols-outlined text-[20px] md:text-[24px] font-black drop-shadow-sm">fact_check</span>
+            </div>
+            <p class="font-black text-[9px] leading-tight text-[#002e5c] mt-1 text-center">Tests</p>
           </div>
-          <p class="font-bold text-[9px] leading-tight text-[#388e3c] uppercase mt-1">Tests</p>
-          <p class="text-[7px] leading-[1.1] text-gray-500 max-w-[80px] hidden md:block">Chapter-wise & full syllabus tests</p>
+          <div class="second-content bg-gradient-to-br from-[#11998e] to-[#38ef7d]">
+            <p class="text-white text-[7px] leading-[1.1] font-bold text-center px-1">Chapter-wise & full syllabus tests</p>
+          </div>
         </div>
-        <!-- Feature 5 -->
 
-        <div class="flex flex-col items-center text-center flex-1 shrink-0 gap-1 px-1 min-w-[70px]">
-          <div class="w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-xl bg-[#c2185b] flex items-center justify-center text-white shadow-md">
-            <span class="material-symbols-outlined text-[20px] md:text-[24px] font-black">description</span>
-
+        <!-- Feature 5: Study Notes -->
+        <div class="uiverse-card shrink-0" style="--theme-color: #e91e63;">
+          <div class="first-content">
+            <div class="w-[36px] h-[36px] md:w-[40px] md:h-[40px] rounded-xl bg-[#e91e63] shadow-[0_4px_12px_rgba(233,30,99,0.35)] flex items-center justify-center text-white border border-white/20">
+              <span class="material-symbols-outlined text-[20px] md:text-[24px] font-black drop-shadow-sm">description</span>
+            </div>
+            <p class="font-black text-[9px] leading-tight text-[#002e5c] mt-1 text-center">Study<br/>Notes</p>
           </div>
-          <p class="font-bold text-[9px] leading-tight text-[#c2185b] uppercase mt-1">Study<br/>Notes</p>
-          <p class="text-[7px] leading-[1.1] text-gray-500 max-w-[80px] hidden md:block">Easy to understand notes</p>
+          <div class="second-content bg-[#e91e63]">
+            <p class="text-white text-[7px] leading-[1.1] font-bold text-center px-1">Easy to understand smart notes</p>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- CENTER: Image -->
-    <div class="relative w-full flex justify-center items-end h-[280px] md:h-full md:max-h-[500px] z-20 md:w-[35%] md:-ml-8 md:-mr-8 shrink">
-      <!-- Mother and Child Image -->
-      <img :src="'/transparentpic.png.png'" alt="Mother and Child" class="w-auto h-full max-w-[135%] object-contain object-bottom z-20 md:-translate-y-2 origin-bottom" />
+    <div class="relative w-full flex justify-center items-end h-[350px] md:h-full md:max-h-[500px] lg:max-h-[570px] z-20 md:w-[48%] md:-ml-16 md:-mr-16 shrink">
+      <!-- Teacher and Student Image -->
+      <img :src="'/transparentpic.png.png?v=2'" alt="Teacher and Student" class="w-auto h-full max-w-[145%] object-contain object-bottom z-20 md:translate-y-2 origin-bottom" />
+
+      <!-- Pinned Background Doodles (stars, book, lightbulb, music notes, lightning) -->
+      <div class="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+        <!-- Purple outline Star top left -->
+        <svg class="absolute top-[8%] left-[12%] w-6 h-6 opacity-75" fill="none" viewBox="0 0 24 24" stroke="#7b7fc4" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499c.172-.468.868-.468 1.04 0l1.972 5.342 5.733.396c.502.035.702.651.314 1.006l-4.38 4.02 1.34 5.626c.117.492-.416.88-.85.65L12 18.066l-5.009 2.923c-.434.23-.967-.158-.85-.65l1.34-5.625-4.38-4.02c-.388-.355-.188-.971.314-1.006l5.733-.396 1.972-5.342z"/></svg>
+        <!-- Blueish outline Star top right -->
+        <svg class="absolute top-[18%] right-[10%] w-5 h-5 opacity-65" fill="none" viewBox="0 0 24 24" stroke="#9c9cd4" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499c.172-.468.868-.468 1.04 0l1.972 5.342 5.733.396c.502.035.702.651.314 1.006l-4.38 4.02 1.34 5.626c.117.492-.416.88-.85.65L12 18.066l-5.009 2.923c-.434.23-.967-.158-.85-.65l1.34-5.625-4.38-4.02c-.388-.355-.188-.971.314-1.006l5.733-.396 1.972-5.342z"/></svg>
+        <!-- Orange outline Star mid-left -->
+        <svg class="absolute top-[32%] left-[8%] w-5 h-5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="#ffb74d" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499c.172-.468.868-.468 1.04 0l1.972 5.342 5.733.396c.502.035.702.651.314 1.006l-4.38 4.02 1.34 5.626c.117.492-.416.88-.85.65L12 18.066l-5.009 2.923c-.434.23-.967-.158-.85-.65l1.34-5.625-4.38-4.02c-.388-.355-.188-.971.314-1.006l5.733-.396 1.972-5.342z"/></svg>
+        <!-- Orange outline Star bottom-left -->
+        <svg class="absolute bottom-[18%] left-[6%] w-4 h-4 opacity-60" fill="none" viewBox="0 0 24 24" stroke="#ffb74d" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499c.172-.468.868-.468 1.04 0l1.972 5.342 5.733.396c.502.035.702.651.314 1.006l-4.38 4.02 1.34 5.626c.117.492-.416.88-.85.65L12 18.066l-5.009 2.923c-.434.23-.967-.158-.85-.65l1.34-5.625-4.38-4.02c-.388-.355-.188-.971.314-1.006l5.733-.396 1.972-5.342z"/></svg>
+        <!-- Lightbulb mid-left -->
+        <svg class="absolute top-[52%] left-[10%] w-[34px] h-[34px] opacity-70" fill="none" viewBox="0 0 24 24" stroke="#7b7fc4" stroke-width="1.2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+        </svg>
+        <!-- Open Book mid-right -->
+        <svg class="absolute top-[30%] right-[6%] w-[38px] h-[38px] opacity-70" fill="none" viewBox="0 0 24 24" stroke="#7b7fc4" stroke-width="1.2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+        <!-- Musical notes bottom center-left -->
+        <svg class="absolute bottom-[10%] left-[28%] w-[24px] h-[24px] opacity-75" fill="none" viewBox="0 0 24 24" stroke="#7b7fc4" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 10l12-3M9 14H6a3 3 0 00-3 3v2a3 3 0 003 3h3a3 3 0 003-3v-5M21 11h-3a3 3 0 00-3 3v2a3 3 0 003 3h3a3 3 0 003-3v-5" />
+        </svg>
+        <!-- Lightning details top right -->
+        <svg class="absolute top-[10%] right-[22%] w-5 h-5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="#7b7fc4" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+      </div>
     </div>
 
     <!-- RIGHT: Stats & Form Box -->
-    <div class="w-full md:w-[30%] bg-white rounded-[32px] shadow-2xl p-4 lg:p-6 flex flex-col gap-3 lg:gap-5 relative z-30 border border-gray-100 my-auto shrink-0">
+    <div class="w-full md:w-[32%] bg-white rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] py-8 px-6 flex flex-col gap-6 relative z-30 border border-gray-100/50 my-auto shrink-0">
       <!-- Stats Badges -->
       <div class="flex gap-4">
-        <div class="flex-1 bg-white border border-gray-100 rounded-[20px] p-2 flex gap-3 items-center shadow-sm">
-          <div class="w-[42px] h-[42px] rounded-full bg-[#004a8b] text-white flex items-center justify-center shrink-0 shadow-md">
-            <span class="material-symbols-outlined text-[22px]">school</span>
+        <!-- 19+ Courses -->
+        <div class="flex-1 bg-[#f0f2f9] border border-transparent rounded-[16px] p-3 flex gap-2.5 items-center">
+          <div class="w-[42px] h-[42px] rounded-full bg-[#004a8b] text-white flex items-center justify-center shrink-0 shadow-sm">
+            <span class="material-symbols-outlined text-[20px]">school</span>
           </div>
           <div class="flex flex-col">
             <h4 class="text-[#002e5c] text-[13px] font-black leading-tight">19+<br/>Courses</h4>
-            <p class="text-[8px] text-gray-500 leading-tight mt-0.5">Designed to build concepts</p>
+            <p class="text-[7px] text-gray-500 leading-tight mt-0.5 font-medium">Designed to build<br/>concepts &amp; skills</p>
           </div>
         </div>
-        <div class="flex-1 bg-white border border-gray-100 rounded-[20px] p-2 flex gap-3 items-center shadow-sm">
-          <div class="w-[42px] h-[42px] rounded-full bg-[#e11d48] text-white flex items-center justify-center shrink-0 shadow-md">
-            <span class="material-symbols-outlined text-[22px]">video_library</span>
+        <!-- 15,000+ Video Library -->
+        <div class="flex-1 bg-[#fbf0f3] border border-transparent rounded-[16px] p-3 flex gap-2.5 items-center">
+          <div class="w-[42px] h-[42px] rounded-[12px] bg-[#e11d48] text-white flex items-center justify-center shrink-0 shadow-sm p-2.5">
+            <!-- Custom inline SVG for the movie reel play icon -->
+            <svg class="w-full h-full text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2.5" />
+              <line x1="3" y1="9" x2="21" y2="9" stroke-dasharray="2 2" />
+              <line x1="3" y1="15" x2="21" y2="15" stroke-dasharray="2 2" />
+              <polygon points="10 11 10 15 14 13" fill="currentColor" />
+            </svg>
           </div>
           <div class="flex flex-col">
             <h4 class="text-[#002e5c] text-[13px] font-black leading-tight">15,000+<br/>Video Library</h4>
-            <p class="text-[8px] text-gray-500 leading-tight mt-0.5">Huge collection of videos</p>
-
+            <p class="text-[7px] text-gray-500 leading-tight mt-0.5 font-medium">Huge collection of videos<br/>for better learning</p>
           </div>
         </div>
       </div>
@@ -283,57 +396,56 @@
       <!-- Signup Form -->
 
       <div class="flex flex-col items-center">
-        <h3 class="text-[#004a8b] text-[14px] font-black text-center mb-4">
+        <h3 class="text-[#004a8b] text-[13px] font-black text-center mb-2">
 
           Three Simple Steps to <span class="text-[#f08a00]">Get Started</span>
         </h3>
         
         <!-- Steps Graphic -->
-        <div class="flex justify-between relative w-full px-4 mb-4">
+        <div class="flex justify-between relative w-full px-2 mb-2">
           <!-- Step 1 -->
-          <div class="flex flex-col items-center gap-2 relative z-10 w-1/3">
-            <div class="relative w-[50px] h-[50px] rounded-full border-2 border-gray-200 flex items-center justify-center bg-white z-10">
-              <div class="absolute -top-[8px] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-[#9c27b0] text-white flex items-center justify-center text-[10px] font-bold border-2 border-white shadow-sm">1</div>
-              <span class="material-symbols-outlined text-gray-600 text-[24px]">phone_iphone</span>
+          <div class="flex flex-col items-center gap-1.5 relative z-10 w-1/3">
+            <div class="relative w-11 h-11 rounded-full border border-gray-200/80 flex items-center justify-center bg-white z-10 shadow-[0_2px_8px_rgba(0,0,0,0.04)] uiverse-checkbox-tile">
+              <div class="absolute -top-[5px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#9c27b0] text-white flex items-center justify-center text-[8px] font-bold border border-white shadow-sm z-20">1</div>
+              <span class="material-symbols-outlined text-slate-500 text-[18px] z-10">smartphone</span>
             </div>
             <div class="text-center mt-1">
-              <h5 class="text-[10px] font-black text-[#002e5c] leading-tight">Enter Mobile Number</h5>
-              <p class="text-[8px] text-gray-500 mt-0.5 leading-tight">Enter your mobile<br/>number to sign up</p>
+              <h5 class="text-[9px] font-black text-[#002e5c] leading-tight">Enter Mobile Number</h5>
+              <p class="text-[7px] text-gray-500 mt-0.5 leading-tight">Enter your mobile<br/>number to sign up</p>
             </div>
           </div>
           <!-- Step 2 -->
-          <div class="flex flex-col items-center gap-2 relative z-10 w-1/3">
-            <div class="relative w-[50px] h-[50px] rounded-full border-2 border-gray-200 flex items-center justify-center bg-white z-10">
-              <div class="absolute -top-[8px] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-[#0060aa] text-white flex items-center justify-center text-[10px] font-bold border-2 border-white shadow-sm">2</div>
-              <span class="material-symbols-outlined text-gray-600 text-[24px]">search</span>
+          <div class="flex flex-col items-center gap-1.5 relative z-10 w-1/3">
+            <div class="relative w-11 h-11 rounded-full border border-gray-200/80 flex items-center justify-center bg-white z-10 shadow-[0_2px_8px_rgba(0,0,0,0.04)] uiverse-checkbox-tile">
+              <div class="absolute -top-[5px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#0060aa] text-white flex items-center justify-center text-[8px] font-bold border border-white shadow-sm z-20">2</div>
+              <span class="material-symbols-outlined text-slate-500 text-[18px] z-10">search</span>
             </div>
             <div class="text-center mt-1">
-              <h5 class="text-[10px] font-black text-[#002e5c] leading-tight">Explore & Learn</h5>
-              <p class="text-[8px] text-gray-500 mt-0.5 leading-tight">Check features, explore<br/>videos and all</p>
+              <h5 class="text-[9px] font-black text-[#002e5c] leading-tight">Explore & Learn</h5>
+              <p class="text-[7px] text-gray-500 mt-0.5 leading-tight">Check features, explore<br/>videos and all</p>
             </div>
           </div>
           <!-- Step 3 -->
-          <div class="flex flex-col items-center gap-2 relative z-10 w-1/3">
-            <div class="relative w-[50px] h-[50px] rounded-full border-2 border-gray-200 flex items-center justify-center bg-white z-10">
-              <div class="absolute -top-[8px] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-[#f08a00] text-white flex items-center justify-center text-[10px] font-bold border-2 border-white shadow-sm">3</div>
-              <span class="material-symbols-outlined text-gray-600 text-[24px]">shield_lock</span>
+          <div class="flex flex-col items-center gap-1.5 relative z-10 w-1/3">
+            <div class="relative w-11 h-11 rounded-full border border-gray-200/80 flex items-center justify-center bg-white z-10 shadow-[0_2px_8px_rgba(0,0,0,0.04)] uiverse-checkbox-tile">
+              <div class="absolute -top-[5px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#f08a00] text-white flex items-center justify-center text-[8px] font-bold border border-white shadow-sm z-20">3</div>
+              <span class="material-symbols-outlined text-slate-500 text-[18px] z-10">shield_lock</span>
             </div>
             <div class="text-center mt-1">
-              <h5 class="text-[10px] font-black text-[#002e5c] leading-tight">Secure Payment</h5>
-              <p class="text-[8px] text-gray-500 mt-0.5 leading-tight">Make a secure payment<br/>and start using</p>
+              <h5 class="text-[9px] font-black text-[#002e5c] leading-tight">Secure Payment</h5>
+              <p class="text-[7px] text-gray-500 mt-0.5 leading-tight">Make a secure payment<br/>and start using,<br/>start learning</p>
             </div>
           </div>
           
           <!-- Connecting Line -->
-          <div class="absolute top-[25px] left-[20%] right-[20%] h-[1px] border-t-[2px] border-dashed border-gray-200 z-0"></div>
+          <div class="absolute top-[22px] left-[20%] right-[20%] h-[1px] border-t-[2px] border-dashed border-gray-200 z-0"></div>
         </div>
 
         <!-- Input & Button -->
 
-        <div class="w-full flex flex-col gap-3 z-10 mt-2">
+        <div class="w-full flex flex-col gap-3.5 z-10 mt-3.5">
           <div class="flex rounded-[12px] border border-gray-300 overflow-hidden shadow-sm h-12 bg-white">
-            <div class="bg-gray-50 px-4 flex items-center justify-center border-r border-gray-300 text-[15px] font-semibold text-gray-700">
-
+            <div class="bg-gray-50 px-3 flex items-center justify-center border-r border-gray-300 text-[14px] font-semibold text-gray-700">
               +91
             </div>
             <input 
@@ -342,7 +454,7 @@
               type="tel" 
               maxlength="10"
               placeholder="Enter Mobile Number" 
-              class="flex-1 px-4 outline-none text-[15px] text-gray-800 font-medium placeholder-gray-400" 
+              class="flex-1 px-3 outline-none text-[14px] text-gray-800 font-medium placeholder-gray-400" 
             />
           </div>
           
@@ -350,15 +462,16 @@
             id="continue-btn-desktop"
             @click="handleContinue"
             :disabled="store.loading"
-            class="w-full bg-[#004a8b] hover:bg-[#003666] text-white font-bold tracking-wider rounded-[12px] h-12 transition-all duration-200 flex items-center justify-center gap-2 text-[15px] disabled:opacity-70 shadow-md"
+            class="w-full bg-[#004a8b] text-white font-bold tracking-wider rounded-[12px] h-12 transition-all duration-200 flex items-center justify-center gap-2 text-[14px] disabled:opacity-70 shadow-md shiny-btn"
           >
-            <span v-if="store.loading" class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+            <span v-if="store.loading" class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
             {{ store.loading ? 'SENDING...' : 'CONTINUE' }}
           </button>
-          <p v-if="localError || store.error" class="text-red-500 text-[11px] text-center font-bold">{{ localError || store.error }}</p>
+          <p v-if="successMessage" class="text-green-600 text-[11px] text-center font-bold m-0">{{ successMessage }}</p>
+          <p v-else-if="localError || store.error" class="text-red-500 text-[10px] text-center font-bold m-0">{{ localError || store.error }}</p>
           
-          <div class="flex items-center justify-center gap-1.5 text-[10px] font-semibold text-gray-500 mt-1">
-            <span class="material-symbols-outlined text-[14px] text-green-600">lock</span>
+          <div class="flex items-center justify-center gap-1 text-[9px] font-semibold text-gray-500 mt-1">
+            <span class="material-symbols-outlined text-[12px] text-green-600">lock</span>
             No Spam | 100% Secure
           </div>
         </div>
@@ -370,17 +483,41 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { useSubscriptionStore } from '../../stores/subscription'
+import { checkMobileExists } from '../../services/api'
+import BottomTrustBar from './BottomTrustBar.vue'
 
+const router = useRouter()
 const store = useSubscriptionStore()
 const mobileInput = ref('')
 const localError = ref('')  
+const successMessage = ref('')
+const showSubscribedMessage = ref(false)
 
 const handleContinue = async () => {
   localError.value = ''
+  successMessage.value = ''
   
   if (!mobileInput.value || mobileInput.value.length !== 10) {
     localError.value = 'Please enter a valid 10-digit mobile number'
+    return
+  }
+  
+  if (!/^[6-9]\d{9}$/.test(mobileInput.value)) {
+    localError.value = 'Please enter a valid mobile number starting with 6-9'
+    return
+  }
+
+  if (/^([0-9])\1{9}$/.test(mobileInput.value)) {
+    localError.value = 'Please enter a real mobile number, not repeated digits'
+    return
+  }
+
+  // Check if we have a valid 2-day skip token in localStorage
+  const skipUntil = localStorage.getItem(`skip_otp_${mobileInput.value}`)
+  if (skipUntil && Date.now() < parseInt(skipUntil)) {
+    router.push('/explore')
     return
   }
 
@@ -395,4 +532,158 @@ const handleContinue = async () => {
 </script>
 
 <style scoped>
+/* Hover Reveal Card styles */
+.uiverse-card {
+  width: 76px;
+  height: 98px;
+  background: transparent;
+  transition: all 0.4s;
+  border-radius: 12px;
+  font-family: sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.uiverse-card:hover {
+  border-radius: 15px;
+  cursor: pointer;
+  transform: scale(1.15);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.first-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.uiverse-card:hover .first-content {
+  height: 0px;
+  opacity: 0;
+}
+
+.second-content {
+  height: 0%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  transition: all 0.4s;
+  font-size: 0px;
+  transform: rotate(90deg) scale(-1);
+  color: white;
+}
+
+.uiverse-card:hover .second-content {
+  opacity: 1;
+  height: 100%;
+  font-size: 8.5px;
+  transform: rotate(0deg);
+}
+
+/* Shiny Button Styles */
+.shiny-btn {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 0.2s ease-in;
+}
+
+.shiny-btn:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.6);
+  transition: all 0.2s ease-out;
+}
+
+.shiny-btn:hover::before {
+  animation: sh02 0.5s 0s linear;
+}
+
+.shiny-btn::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.shiny-btn:active {
+  box-shadow: 0 0 0 0 transparent;
+  transition: box-shadow 0.2s ease-in;
+}
+
+/* Checkbox Check Hover Features for Steps */
+.uiverse-checkbox-tile {
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.uiverse-checkbox-tile:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid #b5bfd9;
+  background-color: #fff;
+  border-radius: 50%;
+  top: -2px;
+  left: -2px;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.25s ease;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192' fill='%23FFFFFF' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='216 72.005 104 184 48 128.005' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='32'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 7px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  z-index: 30;
+}
+
+.uiverse-checkbox-tile:hover {
+  border-color: #004a8b;
+}
+
+.uiverse-checkbox-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: #004a8b;
+  border-color: #004a8b;
+}
+
+.uiverse-checkbox-tile:hover .material-symbols-outlined {
+  color: #004a8b;
+  transition: color 0.15s ease;
+}
 </style>

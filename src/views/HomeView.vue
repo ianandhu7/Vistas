@@ -1,21 +1,27 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-gray-50 relative pb-20">
-
-    <!-- Navbar (takes real space at top) -->
-    <AppNavbar />
+  <div class="h-[100dvh] md:h-screen w-full flex flex-col overflow-hidden bg-[#f0f0fb] relative">
 
     <!-- Yaha se blue wala background ka code hai (Right side blue background) -->
     <div class="hidden md:block absolute top-[20px] bottom-0 right-0 w-[20%] bg-[#004a8b] z-0" style="border-top-left-radius: 40%; border-bottom-left-radius: 100% 100%;"></div>
 
+    <!-- Absolute Logo (No navbar - Desktop only) -->
+    <div class="hidden md:block absolute top-4 left-[48px] z-50 pointer-events-none">
+      <img 
+        src="/logo v.png" 
+        alt="Vista's Learning" 
+        class="h-16 w-auto object-contain"
+        style="mix-blend-mode: multiply;"
+      />
+    </div>
+
     <!-- Main hero content -->
-    <div class="flex flex-col relative z-10 w-full overflow-x-hidden">
+    <div class="flex-1 min-h-0 flex flex-col relative z-10 w-full overflow-y-auto md:overflow-hidden scrollbar-hide">
       <HeroSection />
     </div>
 
-    <BottomTrustBar />
+    <BottomTrustBar class="hidden lg:block" />
 
-    <!-- Bottom action bar (sticks to bottom) -->
-    <StickyActionFooter @viewCourses="showArrowGuide" />
+
 
     <!-- Animated Arrow Overlay -->
     <Teleport to="body">
@@ -100,6 +106,10 @@ import HeroSection from '../components/home/HeroSection.vue'
 import BottomTrustBar from '../components/home/BottomTrustBar.vue'
 import StickyActionFooter from '../components/layout/StickyActionFooter.vue'
 import SubscriptionModals from '../components/home/SubscriptionModals.vue'
+import { useSubscriptionStore } from '../stores/subscription'
+import { isLoggedIn } from '../services/storage'
+
+const store = useSubscriptionStore()
 
 const arrowVisible = ref(false)
 let arrowTimer = null
@@ -109,6 +119,21 @@ const arrowPath = ref('')
 const messageStyle = reactive({})
 const pulseStyle = reactive({})
 const sparkles = ref([])
+
+function handleViewCoursesClick() {
+  // Check the store and local storage directly to be 100% sure
+  const hasToken = store.accessToken || isLoggedIn()
+  
+  if (hasToken) {
+    store.handlePlanSelect('14months')
+  } else {
+    if (window.innerWidth < 768) {
+      store.openModal('mobile')
+    } else {
+      showArrowGuide()
+    }
+  }
+}
 
 function showArrowGuide() {
   let continueBtn = document.getElementById('continue-btn-mobile');

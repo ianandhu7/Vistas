@@ -114,7 +114,7 @@ const redirectToStudentPortal = () => {
 <template>
   <div v-if="store.currentModal" class="fixed inset-0 z-[100] flex flex-col items-center justify-center p-4">
     <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" @click="handleClose"></div>
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" @click="store.currentModal !== 'otp' && store.currentModal !== 'mobile' && handleClose()"></div>
     
     <!-- Error Toast (Sitting directly above the card) -->
     <div 
@@ -135,6 +135,7 @@ const redirectToStudentPortal = () => {
       
       <!-- Close Button -->
       <button 
+        v-if="store.currentModal !== 'otp' && store.currentModal !== 'mobile'"
         @click="handleClose" 
         aria-label="Close modal"
         class="absolute top-4 right-4 text-[#A78BFA] hover:text-white transition-colors z-10"
@@ -197,32 +198,97 @@ const redirectToStudentPortal = () => {
       </div>
 
       <!-- 2. Mobile Number Modal -->
-      <div v-if="store.currentModal === 'mobile'" class="p-8">
-        <div class="text-center mb-8">
-          <div class="w-16 h-16 bg-[var(--accent-purple)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="material-symbols-outlined text-[var(--accent-purple)] text-3xl">phone_iphone</span>
+      <!-- 2. Mobile Number Modal (Desktop Form Box Match) -->
+      <div v-if="store.currentModal === 'mobile'" class="p-4 bg-white rounded-[24px] flex flex-col gap-3">
+        <!-- Stats Badges -->
+        <div class="flex gap-2">
+          <div class="flex-1 bg-white border border-gray-100 rounded-[16px] p-2 flex gap-2 items-center shadow-sm">
+            <div class="w-[34px] h-[34px] rounded-full bg-[#004a8b] text-white flex items-center justify-center shrink-0 shadow-md">
+              <span class="material-symbols-outlined text-[18px]">school</span>
+            </div>
+            <div class="flex flex-col">
+              <h4 class="text-[#002e5c] text-[11px] font-black leading-tight">19+<br/>Courses</h4>
+              <p class="text-[7px] text-gray-500 leading-tight mt-0.5">Designed to build concepts</p>
+            </div>
           </div>
-          <h3 class="text-2xl font-bold text-[var(--text-primary)] mb-2">Verify Mobile</h3>
-          <p class="text-sm text-[var(--text-secondary)]">Enter your mobile number to continue with the payment</p>
+          <div class="flex-1 bg-white border border-gray-100 rounded-[16px] p-2 flex gap-2 items-center shadow-sm">
+            <div class="w-[34px] h-[34px] rounded-full bg-[#e11d48] text-white flex items-center justify-center shrink-0 shadow-md">
+              <span class="material-symbols-outlined text-[18px]">video_library</span>
+            </div>
+            <div class="flex flex-col">
+              <h4 class="text-[#002e5c] text-[11px] font-black leading-tight">15,000+<br/>Video Library</h4>
+              <p class="text-[7px] text-gray-500 leading-tight mt-0.5">Huge collection of videos</p>
+            </div>
+          </div>
         </div>
 
-        <div class="space-y-6">
-          <!-- Name Input for New Users -->
-          <div class="relative">
-            <input
+        <div class="flex flex-col items-center mt-2">
+          <h3 class="text-[#004a8b] text-[13px] font-black text-center mb-2">
+            Three Simple Steps to <span class="text-[#f08a00]">Get Started</span>
+          </h3>
+          
+          <!-- Steps Graphic -->
+          <div class="flex justify-between relative w-full px-2 mb-2">
+            <!-- Step 1 -->
+            <div class="flex flex-col items-center gap-1.5 relative z-10 w-1/3">
+              <div class="relative w-[36px] h-[36px] rounded-full border-2 border-purple-200 flex items-center justify-center bg-purple-50 z-10">
+                <div class="absolute -top-[6px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#9c27b0] text-white flex items-center justify-center text-[8px] font-bold border-2 border-white shadow-sm">1</div>
+                <span class="material-symbols-outlined text-[#9c27b0] text-[18px]">smartphone</span>
+              </div>
+              <div class="text-center mt-1">
+                <h5 class="text-[8px] font-black text-[#002e5c] leading-tight">Enter Mobile Number</h5>
+                <p class="text-[6px] text-gray-500 mt-0.5 leading-tight">Enter your mobile<br/>number to sign up</p>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="flex flex-col items-center gap-1.5 relative z-10 w-1/3">
+              <div class="relative w-[36px] h-[36px] rounded-full border-2 border-blue-200 flex items-center justify-center bg-blue-50 z-10">
+                <div class="absolute -top-[6px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#0060aa] text-white flex items-center justify-center text-[8px] font-bold border-2 border-white shadow-sm">2</div>
+                <span class="material-symbols-outlined text-[#0060aa] text-[18px]">search</span>
+              </div>
+              <div class="text-center mt-1">
+                <h5 class="text-[8px] font-black text-[#002e5c] leading-tight">Explore & Learn</h5>
+                <p class="text-[6px] text-gray-500 mt-0.5 leading-tight">Check features, explore<br/>videos and all</p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="flex flex-col items-center gap-1.5 relative z-10 w-1/3">
+              <div class="relative w-[36px] h-[36px] rounded-full border-2 border-orange-200 flex items-center justify-center bg-orange-50 z-10">
+                <div class="absolute -top-[6px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#f08a00] text-white flex items-center justify-center text-[8px] font-bold border-2 border-white shadow-sm">3</div>
+                <span class="material-symbols-outlined text-[#f08a00] text-[18px]">shield_lock</span>
+              </div>
+              <div class="text-center mt-1">
+                <h5 class="text-[8px] font-black text-[#002e5c] leading-tight">Secure Payment</h5>
+                <p class="text-[6px] text-gray-500 mt-0.5 leading-tight">Make a secure payment<br/>and start using</p>
+              </div>
+            </div>
+            
+            <!-- Connecting Line -->
+            <div class="absolute top-[18px] left-[20%] right-[20%] h-[1px] border-t-[2px] border-dashed border-gray-200 z-0"></div>
+          </div>
+        </div>
+
+        <!-- Input & Button -->
+        <div class="w-full flex flex-col gap-2 z-10 mt-1">
+          <!-- Name Input -->
+          <div class="flex rounded-[12px] border border-gray-300 overflow-hidden shadow-sm h-[44px] bg-white">
+            <div class="bg-gray-50 px-3 flex items-center justify-center border-r border-gray-300 text-[14px] text-gray-500">
+              <span class="material-symbols-outlined text-[18px]">person</span>
+            </div>
+            <input 
               :value="store.userName"
               @input="e => { if (/[0-9]/.test(e.target.value)) { store.setError('Name cannot contain numbers'); e.target.value = e.target.value.replace(/[0-9]/g, ''); } store.setUserName(e.target.value); }"
               @keypress="e => { if (/[0-9]/.test(e.key)) { e.preventDefault(); store.setError('Name cannot contain numbers'); } }"
-              type="text"
-              placeholder="Enter your full name"
-              class="w-full bg-[var(--bg-secondary)] border border-[var(--border-light)] rounded-xl py-4 px-4 text-[var(--text-primary)] font-black focus:border-[var(--accent-purple)] focus:ring-1 focus:ring-[var(--accent-purple)] outline-none transition-all"
+              type="text" 
+              placeholder="Enter your full name" 
+              class="flex-1 px-3 outline-none text-[14px] text-gray-800 font-medium placeholder-gray-400" 
             />
           </div>
 
-          <div class="relative">
-            <div class="absolute left-4 top-1/2 -translate-y-1/2 flex items-center gap-2 border-r border-[var(--border-light)] pr-3">
-              <span class="text-[var(--text-primary)]/40 text-sm">🇮🇳</span>
-              <span class="text-[var(--text-primary)] font-bold text-sm">+91</span>
+          <!-- Mobile Input -->
+          <div class="flex rounded-[12px] border border-gray-300 overflow-hidden shadow-sm h-[44px] bg-white">
+            <div class="bg-gray-50 px-3 flex items-center justify-center border-r border-gray-300 text-[14px] font-semibold text-gray-700">
+              +91
             </div>
             <input 
               :value="store.mobileNumber" 
@@ -230,19 +296,24 @@ const redirectToStudentPortal = () => {
               @keypress="e => { if (!/[0-9]/.test(e.key)) { e.preventDefault(); store.setError('Mobile number can only contain numbers'); } }"
               type="tel" 
               maxlength="10"
-              placeholder="Enter 10 digit number"
-              class="w-full bg-[var(--bg-secondary)] border border-[var(--border-light)] rounded-xl py-4 pl-24 pr-4 text-[var(--text-primary)] font-black tracking-[2px] focus:border-[var(--accent-purple)] focus:ring-1 focus:ring-[var(--accent-purple)] outline-none transition-all"
+              placeholder="Enter Mobile Number" 
+              class="flex-1 px-3 outline-none text-[14px] text-gray-800 font-medium placeholder-gray-400" 
             />
           </div>
-
+          
           <button 
             @click="store.sendOtp()"
             :disabled="store.loading"
-            class="w-full py-4 bg-[var(--accent-purple)] text-white font-black uppercase tracking-widest rounded-xl hover:brightness-110 shadow-lg transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+            class="w-full bg-[#004a8b] hover:bg-[#003666] text-white font-bold tracking-wider rounded-[12px] h-[44px] transition-all duration-200 flex items-center justify-center gap-2 text-[14px] disabled:opacity-70 shadow-md mt-1"
           >
             <span v-if="store.loading" class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-            {{ store.loading ? 'Sending...' : 'Send OTP' }}
+            {{ store.loading ? 'SENDING...' : 'CONTINUE' }}
           </button>
+          
+          <div class="flex items-center justify-center gap-1 text-[10px] font-semibold text-gray-500 mt-1">
+            <span class="material-symbols-outlined text-[12px] text-green-500">lock</span>
+            No Spam | 100% Secure
+          </div>
         </div>
       </div>
 
@@ -297,7 +368,7 @@ const redirectToStudentPortal = () => {
             class="w-full py-4 bg-[var(--accent-purple)] text-white font-black uppercase tracking-widest rounded-xl hover:brightness-110 shadow-lg transition-all disabled:opacity-50 flex items-center justify-center gap-2"
           >
             <span v-if="store.loading" class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-            {{ store.loading ? 'VERIFYING...' : (store.isHeroFlow ? 'VERIFY' : 'VERIFY & PAY') }}
+            {{ store.loading ? 'VERIFYING...' : 'VERIFY' }}
           </button>
 
           <div class="text-center">

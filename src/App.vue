@@ -15,7 +15,6 @@ const authStore = useAuthStore()
 const subscriptionStore = useSubscriptionStore()
 const route = useRoute()
 
-
 onMounted(() => {
   themeStore.initTheme()
   authStore.initAuth()
@@ -99,7 +98,7 @@ button {
   .app-container {
     min-height: 100vh !important;
     min-height: 100dvh !important; /* Dynamic viewport height for mobile browsers */
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     width: 100% !important;
   }
   main {
