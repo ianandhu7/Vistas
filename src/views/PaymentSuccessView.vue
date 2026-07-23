@@ -92,7 +92,7 @@ onUnmounted(() => {
             class="absolute inset-[5px] rounded-full border flex items-center justify-center overflow-hidden transition-colors duration-300"
             :class="themeStore.theme === 'dark' ? 'bg-[#140A26] border-[#8B5CF6]/30' : 'bg-white border-gray-50'"
           >
-             <img src="/logo.webp" alt="Vistas Learning" width="48" height="48" loading="lazy" class="w-12 h-12 object-contain" />
+             <img src="/light-logo.webp" alt="Vistas Learning" width="48" height="48" loading="lazy" class="w-12 h-12 object-contain" />
           </div>
           
           <!-- Verified Badge -->
