@@ -14,7 +14,7 @@
       </div>
       
       <!-- Grid / Horizontal Scroll -->
-      <div ref="scrollContainer" class="w-full flex max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:pb-4 hide-scrollbar md:grid md:grid-cols-3 lg:grid-cols-3 gap-4 max-w-4xl mx-auto py-2">
+      <div ref="scrollContainer" class="w-full flex max-md:overflow-x-auto max-md:snap-x max-md:snap-mandatory max-md:pb-4 hide-scrollbar md:grid md:grid-cols-3 lg:grid-cols-3 max-md:gap-2 md:gap-4 max-w-4xl mx-auto py-2">
         
         <!-- Set 1 (Always Visible) -->
         <div 
@@ -178,8 +178,8 @@ onUnmounted(() => {
 /* Flip card container */
 .flip-card {
   background-color: transparent;
-  width: 96px;
-  height: 124px;
+  width: 68px;
+  height: 108px;
   perspective: 1000px;
   font-family: sans-serif;
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

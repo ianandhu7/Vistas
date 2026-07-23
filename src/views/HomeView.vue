@@ -1,8 +1,8 @@
 <template>
   <div class="h-[100dvh] md:h-screen w-full flex flex-col overflow-hidden bg-[#f0f0fb] relative">
 
-    <!-- Yaha se blue wala background ka code hai (Right side blue background) -->
-    <div class="hidden md:block absolute top-[20px] bottom-0 right-0 w-[20%] bg-[#004a8b] z-0" style="border-top-left-radius: 40%; border-bottom-left-radius: 100% 100%;"></div>
+    <!-- Original desktop right side blue background -->
+    <div class="hidden lg:block absolute top-[20px] bottom-0 right-0 w-[20%] bg-[#004d6e] z-0" style="border-top-left-radius: 40%; border-bottom-left-radius: 100% 100%;"></div>
 
     <!-- Absolute Logo (No navbar - Desktop only) -->
     <div class="hidden md:block absolute top-4 left-[48px] z-50 pointer-events-none">

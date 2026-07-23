@@ -6,13 +6,43 @@
       
       <!-- Pinned Mobile Background Doodles & Backdrop Shapes -->
       <div class="absolute top-0 bottom-0 left-0 -right-4 pointer-events-none z-0 overflow-hidden">
-        <!-- Curved teal backdrop shape on the right edge (covers top right fully) -->
-        <svg class="absolute top-0 right-0 w-[56%] h-[60%] opacity-90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M100 0H35Q55 50 100 100Z" fill="#002e5c"/>
+        <!-- Full height curved blue backdrop shape on the right edge matching screenshot -->
+        <svg class="absolute inset-0 w-full h-full opacity-100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M 100 0 H 60 C 75 5, 88 10, 85 20 C 80 35, 45 50, 48 60 C 52 75, 58 88, 68 100 H 100 V 0 Z" fill="#004d6e"/>
         </svg>
 
         <!-- Purple outline Star top left -->
         <svg class="absolute top-[8%] left-[6%] w-5 h-5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="#7b7fc4" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499c.172-.468.868-.468 1.04 0l1.972 5.342 5.733.396c.502.035.702.651.314 1.006l-4.38 4.02 1.34 5.626c.117.492-.416.88-.85.65L12 18.066l-5.009 2.923c-.434.23-.967-.158-.85-.65l1.34-5.625-4.38-4.02c-.388-.355-.188-.971.314-1.006l5.733-.396 1.972-5.342z"/></svg>
+
+        <!-- Open Book Doodle above mother's head -->
+        <svg class="absolute top-[5.5%] left-[42%] w-7 h-7 opacity-45 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="#8b5cf6" stroke-width="1.2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+        </svg>
+
+        <!-- 4-point Diamond Sparkle 1 (Above book) -->
+        <svg class="absolute top-[4%] left-[36%] w-3.5 h-3.5 opacity-50" fill="none" viewBox="0 0 24 24" stroke="#a78bfa" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+        </svg>
+
+        <!-- 4-point Diamond Sparkle 2 (Right of book) -->
+        <svg class="absolute top-[4.5%] left-[48%] w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" stroke="#a78bfa" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+        </svg>
+
+        <!-- 4-point Diamond Sparkle 3 (Farther right) -->
+        <svg class="absolute top-[6.5%] left-[56%] w-3.5 h-3.5 opacity-45" fill="none" viewBox="0 0 24 24" stroke="#f59e0b" stroke-width="1.3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+        </svg>
+
+        <!-- 4-point Diamond Sparkle 4 (Far Left edge) -->
+        <svg class="absolute top-[11%] left-[3%] w-3.5 h-3.5 opacity-40" fill="none" viewBox="0 0 24 24" stroke="#a78bfa" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+        </svg>
+
+        <!-- Small Golden Outline Star (Right side) -->
+        <svg class="absolute top-[13%] left-[75%] w-3.5 h-3.5 opacity-55" fill="none" viewBox="0 0 24 24" stroke="#fbbf24" stroke-width="1.4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499c.172-.468.868-.468 1.04 0l1.972 5.342 5.733.396c.502.035.702.651.314 1.006l-4.38 4.02 1.34 5.626c.117.492-.416.88-.85.65L12 18.066l-5.009 2.923c-.434.23-.967-.158-.85-.65l1.34-5.625-4.38-4.02c-.388-.355-.188-.971.314-1.006l5.733-.396 1.972-5.342z"/>
+        </svg>
       </div>
       
       <!-- Top Header (Logo & Board Tag) -->
@@ -40,7 +70,7 @@
         </h1>
         <!-- Board Tag -->
         <div class="mt-2.5">
-          <span class="bg-[#002e5c] text-white text-[8.5px] font-extrabold px-3 py-1.5 rounded-[6px] shadow-sm tracking-wide inline-block">
+          <span class="bg-[#004d6e] text-white text-[8.5px] font-extrabold px-3 py-1.5 rounded-[6px] shadow-sm tracking-wide inline-block">
             Kerala State Board
           </span>
         </div>
@@ -49,76 +79,89 @@
       <!-- Main Section: Vertical Features on Left & Teacher/Student Image on Right -->
       <div class="px-5 w-full flex items-stretch justify-between z-20 mt-6 gap-3 relative">
         <!-- Left Side: Vertical Features list (constrained to 48% width to avoid image collision, shifted up to align with image) -->
-        <div class="w-[48%] flex flex-col justify-start pt-1 pb-4 gap-4 z-20 relative -translate-y-2">
-          <!-- 1. Live Classes -->
-          <div class="flex items-center gap-2.5 bg-white rounded-[14px] p-2 border border-gray-100/50 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-            <div class="w-9 h-9 rounded-xl bg-[#5e35b1] flex flex-col items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
-              <span class="material-symbols-outlined text-[15px] leading-none">sensors</span>
-              <span class="text-[4px] font-black leading-none mt-0.5 text-white/90">LIVE</span>
-            </div>
-            <div class="flex flex-col min-w-0 flex-1">
-              <h4 class="font-bold text-[11px] text-black leading-tight line-clamp-1">Live Classes</h4>
-              <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5 line-clamp-2 break-words">Learn from experts<br/>in real-time</p>
-            </div>
-          </div>
+        <div class="w-[48%] z-20 relative -translate-y-2">
+          <!-- Seamless non-scrollable features list -->
+          <div>
 
-          <!-- 2. Animated Lessons -->
-          <div class="flex items-center gap-2.5 bg-white rounded-[14px] p-2 border border-gray-100/50 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-            <div class="w-9 h-9 rounded-xl bg-[#e91e63] flex items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
-              <span class="material-symbols-outlined text-[16px]">slideshow</span>
+            <!-- 1. Live Classes -->
+            <div class="flex items-center gap-2.5 py-2">
+              <div class="w-9 h-9 rounded-xl bg-[#5e35b1] flex flex-col items-center justify-center text-white shrink-0 shadow-sm">
+                <span class="material-symbols-outlined text-[15px] leading-none">sensors</span>
+                <span class="text-[4px] font-black leading-none mt-0.5 text-white/90">LIVE</span>
+              </div>
+              <div class="flex flex-col min-w-0 flex-1">
+                <h4 class="font-bold text-[11px] text-gray-900 leading-tight">Live Classes</h4>
+                <p class="text-[8px] text-gray-500 font-medium leading-tight mt-0.5">Learn from expert teachers<br/>in real-time</p>
+              </div>
             </div>
-            <div class="flex flex-col min-w-0 flex-1">
-              <h4 class="font-bold text-[11px] text-black leading-tight line-clamp-1">Animated Lessons</h4>
-              <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5 line-clamp-2 break-words">Concepts explained<br/>with fun animations</p>
-            </div>
-          </div>
 
-          <!-- 3. All Six Subjects -->
-          <div class="flex items-center gap-2.5 bg-white rounded-[14px] p-2 border border-gray-100/50 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-            <div class="w-9 h-9 rounded-xl bg-[#1976d2] flex items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
-              <span class="material-symbols-outlined text-[16px]">library_books</span>
-            </div>
-            <div class="flex flex-col min-w-0 flex-1">
-              <h4 class="font-bold text-[11px] text-black leading-tight line-clamp-1">All Six Subjects</h4>
-              <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5 line-clamp-2 break-words">Maths, Science,<br/>Social & Languages</p>
-            </div>
-          </div>
+            <div class="h-px bg-gray-200/60 my-0.5"></div>
 
-          <!-- 4. Tests -->
-          <div class="flex items-center gap-2.5 bg-white rounded-[14px] p-2 border border-gray-100/50 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-            <div class="w-9 h-9 rounded-xl bg-[#43a047] flex items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
-              <span class="material-symbols-outlined text-[16px]">fact_check</span>
+            <!-- 2. Animated Lessons -->
+            <div class="flex items-center gap-2.5 py-2">
+              <div class="w-9 h-9 rounded-xl bg-[#e91e63] flex items-center justify-center text-white shrink-0 shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">slideshow</span>
+              </div>
+              <div class="flex flex-col min-w-0 flex-1">
+                <h4 class="font-bold text-[11px] text-gray-900 leading-tight">Animated Lessons</h4>
+                <p class="text-[8px] text-gray-500 font-medium leading-tight mt-0.5">Concepts explained with<br/>fun & easy animations</p>
+              </div>
             </div>
-            <div class="flex flex-col min-w-0 flex-1">
-              <h4 class="font-bold text-[11px] text-black leading-tight line-clamp-1">Tests</h4>
-              <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5 line-clamp-2 break-words">Chapter-wise &<br/>full syllabus tests</p>
-            </div>
-          </div>
 
-          <!-- 5. Study Notes -->
-          <div class="flex items-center gap-2.5 bg-white rounded-[14px] p-2 border border-gray-100/50 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-            <div class="w-9 h-9 rounded-xl bg-[#ff9800] flex items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
-              <span class="material-symbols-outlined text-[18px]">description</span>
+            <div class="h-px bg-gray-200/60 my-0.5"></div>
+
+            <!-- 3. All Six Subjects -->
+            <div class="flex items-center gap-2.5 py-2">
+              <div class="w-9 h-9 rounded-xl bg-[#1976d2] flex items-center justify-center text-white shrink-0 shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">library_books</span>
+              </div>
+              <div class="flex flex-col min-w-0 flex-1">
+                <h4 class="font-bold text-[11px] text-gray-900 leading-tight">All Six Subjects</h4>
+                <p class="text-[8px] text-gray-500 font-medium leading-tight mt-0.5">Maths, Science, Social Science,<br/>English, Kannada & Hindi</p>
+              </div>
             </div>
-            <div class="flex flex-col min-w-0 flex-1">
-              <h4 class="font-bold text-[11px] text-black leading-tight line-clamp-1">Study Notes</h4>
-              <p class="text-[8px] text-gray-500 font-semibold leading-tight mt-0.5 line-clamp-2 break-words">Simple notes for<br/>quick revision</p>
+
+            <div class="h-px bg-gray-200/60 my-0.5"></div>
+
+            <!-- 4. Tests -->
+            <div class="flex items-center gap-2.5 py-2">
+              <div class="w-9 h-9 rounded-xl bg-[#43a047] flex items-center justify-center text-white shrink-0 shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">fact_check</span>
+              </div>
+              <div class="flex flex-col min-w-0 flex-1">
+                <h4 class="font-bold text-[11px] text-gray-900 leading-tight">Tests</h4>
+                <p class="text-[8px] text-gray-500 font-medium leading-tight mt-0.5">Chapter-wise & full syllabus<br/>tests to track progress</p>
+              </div>
             </div>
+
+            <div class="h-px bg-gray-200/60 my-0.5"></div>
+
+            <!-- 5. Study Notes -->
+            <div class="flex items-center gap-2.5 py-2">
+              <div class="w-9 h-9 rounded-xl bg-[#ff9800] flex items-center justify-center text-white shrink-0 shadow-sm">
+                <span class="material-symbols-outlined text-[18px]">description</span>
+              </div>
+              <div class="flex flex-col min-w-0 flex-1">
+                <h4 class="font-bold text-[11px] text-gray-900 leading-tight">Study Notes</h4>
+                <p class="text-[8px] text-gray-500 font-medium leading-tight mt-0.5">Easy to understand notes<br/>for quick revision</p>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <!-- Right Side: Teacher/Student Image (Fully visible, absolute styled to align on the right) -->
-        <div class="absolute right-0 bottom-0 top-0 w-[48%] flex items-end justify-end pointer-events-none z-10 overflow-visible">
+        <!-- Right Side: Teacher/Student Image (Shifted further right to prevent text overlap) -->
+        <div class="absolute -right-3 bottom-0 top-0 w-[52%] flex items-end justify-end pointer-events-none z-10 overflow-visible">
           <img 
             :src="'/transparentpic.png.png?v=2'" 
             alt="Teacher and Student" 
-            class="w-[135%] max-w-none h-auto object-contain object-right-bottom -translate-y-6" 
+            class="w-[125%] max-w-none h-auto object-contain object-right-bottom -translate-y-4 translate-x-3" 
           />
         </div>
       </div>
 
       <!-- Combined Stats & Signup Form in one Card (Sits at the bottom naturally in flexbox) -->
-      <div class="w-full pb-2 px-4 z-20 shrink-0 mt-auto mt-2.5">
+      <div class="w-full pb-1 px-4 z-20 shrink-0 -mt-4">
         <div class="bg-white rounded-[24px] shadow-2xl border border-gray-100/60 p-3 flex flex-col gap-2">
           
           <!-- Combined Component Part 1: Stats Badges (Horizontal row inside card with separate themed backgrounds) -->
@@ -219,7 +262,7 @@
                 id="continue-btn-mobile"
                 @click="handleContinue"
                 :disabled="store.loading"
-                class="w-full bg-[#002e5c] hover:bg-[#001c3d] text-white font-bold tracking-wider rounded-[10px] h-9 transition-all duration-200 flex items-center justify-center gap-2 text-[12px] disabled:opacity-70 shadow-md"
+                class="w-full bg-[#004d6e] hover:bg-[#003852] text-white font-bold tracking-wider rounded-[10px] h-9 transition-all duration-200 flex items-center justify-center gap-2 text-[12px] disabled:opacity-70 shadow-md"
               >
                 <span v-if="store.loading" class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
                 {{ store.loading ? 'SENDING...' : 'CONTINUE' }}
@@ -252,7 +295,7 @@
         </h1>
         <div class="w-12 h-1.5 bg-[#f08a00] rounded-full mt-1 mb-2"></div>
         
-        <button class="bg-[#004a8b] hover:bg-[#003666] text-white text-[12px] lg:text-[13px] font-bold px-6 py-2 lg:px-7 lg:py-2.5 rounded-[30px] transition-colors tracking-wide shadow-md">
+        <button class="bg-[#004d6e] hover:bg-[#003852] text-white text-[12px] lg:text-[13px] font-bold px-6 py-2 lg:px-7 lg:py-2.5 rounded-[30px] transition-colors tracking-wide shadow-md">
           Karnataka State Board
         </button>
       </div>
@@ -367,7 +410,7 @@
       <div class="flex gap-4">
         <!-- 19+ Courses -->
         <div class="flex-1 bg-[#f0f2f9] border border-transparent rounded-[16px] p-3 flex gap-2.5 items-center">
-          <div class="w-[42px] h-[42px] rounded-full bg-[#004a8b] text-white flex items-center justify-center shrink-0 shadow-sm">
+          <div class="w-[42px] h-[42px] rounded-full bg-[#004d6e] text-white flex items-center justify-center shrink-0 shadow-sm">
             <span class="material-symbols-outlined text-[20px]">school</span>
           </div>
           <div class="flex flex-col">
@@ -396,7 +439,7 @@
       <!-- Signup Form -->
 
       <div class="flex flex-col items-center">
-        <h3 class="text-[#004a8b] text-[13px] font-black text-center mb-2">
+        <h3 class="text-[#004d6e] text-[13px] font-black text-center mb-2">
 
           Three Simple Steps to <span class="text-[#f08a00]">Get Started</span>
         </h3>
@@ -462,7 +505,7 @@
             id="continue-btn-desktop"
             @click="handleContinue"
             :disabled="store.loading"
-            class="w-full bg-[#004a8b] text-white font-bold tracking-wider rounded-[12px] h-12 transition-all duration-200 flex items-center justify-center gap-2 text-[14px] disabled:opacity-70 shadow-md shiny-btn"
+            class="w-full bg-[#004d6e] hover:bg-[#003852] text-white font-bold tracking-wider rounded-[12px] h-12 transition-all duration-200 flex items-center justify-center gap-2 text-[14px] disabled:opacity-70 shadow-md shiny-btn"
           >
             <span v-if="store.loading" class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
             {{ store.loading ? 'SENDING...' : 'CONTINUE' }}
